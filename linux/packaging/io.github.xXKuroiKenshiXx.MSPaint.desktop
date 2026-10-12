@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=MSPaint Rewritten Linux
+Comment=Native raster drawing and image editor
+Exec=mspaint-rewritten-linux %f
+Icon=io.github.xXKuroiKenshiXx.MSPaint
+Terminal=false
+Categories=Graphics;RasterGraphics;2DGraphics;
+MimeType=image/png;image/jpeg;image/bmp;image/gif;image/webp;
+StartupNotify=true

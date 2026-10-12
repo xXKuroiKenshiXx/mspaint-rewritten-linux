@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Keep Linux entry points usable when checked out on Windows for WSL.
+linux/**/*.sh text eol=lf
+linux/**/*.py text eol=lf
+.github/workflows/*.yml text eol=lf

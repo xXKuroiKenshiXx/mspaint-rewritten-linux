@@ -1,0 +1,57 @@
+name: Linux tests and packages
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-venv libgl1 libegl1 libopengl0 libxkbcommon-x11-0 libxcb-cursor0 libxcb-icccm4 libxcb-keysyms1 libxcb-xinerama0 flatpak flatpak-builder squashfs-tools patchelf xvfb podman
+          python3 -m venv linux/.venv
+          echo "$PWD/linux/.venv/bin" >> "$GITHUB_PATH"
+          linux/.venv/bin/python -m pip install --upgrade pip
+          linux/.venv/bin/python -m pip install -r linux/requirements-dev.txt
+      - name: Test and audit
+        working-directory: linux
+        run: |
+          QT_QPA_PLATFORM=offscreen python -m pytest -q
+          python -m pip_audit -r requirements.txt
+          xvfb-run -a python -m mspaint --smoke-test
+      - name: Build executable and mirror sources
+        working-directory: linux
+        run: |
+          bash scripts/download-third-party.sh
+          bash scripts/build.sh
+          sudo python3 scripts/download-system-sources.py
+          tar -czf dist/packages/third-party-sources-0.1.0-x86_64.tar.gz third-party-sources
+      - name: Build AppImage and Flatpak
+        working-directory: linux
+        run: |
+          bash scripts/build-appimage.sh
+          flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          flatpak install --user -y flathub org.freedesktop.Sdk//25.08 org.freedesktop.Platform//25.08
+          bash scripts/build-flatpak.sh
+          QT_QPA_PLATFORM=offscreen dist/packages/mspaint-rewritten-linux-0.1.0-x86_64.AppImage --appimage-extract-and-run --smoke-test
+          flatpak install --user -y dist/packages/mspaint-rewritten-linux-0.1.0-x86_64.flatpak
+          flatpak run --user --env=QT_QPA_PLATFORM=offscreen io.github.xXKuroiKenshiXx.MSPaint --smoke-test
+          cd dist/packages
+          sha256sum *.AppImage *.deb *.flatpak *.tar.gz > SHA256SUMS
+      - name: Test packaged startup on distributions
+        run: |
+          sudo python3 linux/scripts/test-distributions.py linux/dist/mspaint-rewritten-linux linux/dist/packages/distribution-tests
+          sudo python3 linux/scripts/test-deb.py linux/dist/packages
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: linux-x86_64
+          path: linux/dist/packages
+          if-no-files-found: error

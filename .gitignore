@@ -67,3 +67,18 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+# Native Linux generated files
+linux/.venv/
+linux/build/
+linux/dist/
+linux/*.spec
+__pycache__/
+.pytest_cache/
+.flatpak-builder/
+linux/flatpak-build/
+linux/flatpak-repo/
+linux/third-party-sources/
+linux/core
+*.core
+release-artifacts/
