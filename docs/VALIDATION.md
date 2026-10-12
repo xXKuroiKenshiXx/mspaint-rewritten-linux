@@ -4,14 +4,20 @@
 
 ## Resultados
 
-- **49 pruebas pytest aprobadas**: herramientas de ratón y formas, controles de curva, texto, cancelación de descarte, copia/pegado/recorte, máscara transparente, movimiento de selección con deshacer, giro, zoom, miniatura y exportación PDF. El núcleo verifica archivos corruptos, PNG/BMP/JPEG/GIF/WebP, guardado fallido, historial tras guardar y bifurcar, relleno, límites, nuevo documento y ampliación al pegar.
+- **68 pruebas pytest aprobadas**: herramientas de ratón y formas, controles de curva, texto, cancelación de descarte, copia/pegado/recorte, máscara transparente, movimiento de selección con deshacer, giro, zoom, miniatura y exportación PDF. El núcleo verifica archivos corruptos, PNG/BMP/JPEG/GIF/WebP, guardado fallido, historial tras guardar y bifurcar, relleno, límites, nuevo documento y ampliación al pegar.
 - **Ejecutable empaquetado**: sus comprobaciones internas de formatos, deshacer/rehacer, relleno, cambiar tamaño, pegar y preservar el documento ante entrada corrupta pasan sin pytest ni Python instalado en el host.
 - **X11/Xvfb**: arranque del ejecutable y captura de la interfaz aprobados.
 - **AppImage**: extracción/ejecución sin FUSE y arranque aprobados. No se probó el montaje FUSE en WSL.
 - **`.deb`**: instalado con apt en un contenedor Ubuntu 24.04 limpio; comprobaciones internas y arranque aprobados.
 - **Flatpak**: instalación, comprobaciones internas y arranque offscreen aprobados. X11 también aprobado; WSL necesitó `--share=network` solo durante esa prueba porque su Xvfb utiliza un socket abstracto. El manifiesto distribuido no solicita red.
 - **pip-audit**: sin vulnerabilidades conocidas en las dependencias Python de ejecución ni en el entorno de compilación final. Al comienzo encontró vulnerabilidades en pip 24.0 del venv; se actualizó a 26.2.1. Esta auditoría no cubre todas las bibliotecas C/C++ ni demuestra ausencia de fallos desconocidos.
-- **ClamAV 1.5.4, 3.628.164 firmas**: análisis final de 647 archivos del ejecutable/artefactos, cero infectados. Datos analizados: 518,73 MiB; leídos: 962 MiB. El análisis inicial del checkout también tuvo cero detecciones. Se incluyen logs; los límites del motor se aplican y no se promete ausencia universal de malware.
+- **ClamAV 1.5.4, 3.628.164 firmas**: análisis final de 780 archivos del ejecutable con recursos y fuentes, cero infectados. El análisis inicial del checkout también tuvo cero detecciones. Se incluyen logs; los límites del motor se aplican y no se promete ausencia universal de malware.
+
+## Comparación visual
+
+`paint-clone-preview.png` se genera desde la ventana Qt real, no desde una maqueta. Se reproduce la distribución del formulario Delphi y se usan 125 recursos extraídos del DFM: cinta, herramientas, formas, menús y accesos rápidos. La comparación con la captura aportada verifica título, pestañas, grupos, paleta, reglas exteriores, área de trabajo y barra de estado. Las fuentes libres incluidas pueden cambiar ligeramente el aspecto de los caracteres; Qt y GDI también rasterizan de forma diferente. Esta revisión no certifica igualdad de cada píxel.
+
+Las pruebas adicionales cubren clics de la cinta, Color 2, texto editable con tiradores, cancelación de cierre conservando la edición, redimensionado de selección/formas, controles de curva, unidades de propiedades y ciclos de apertura/cierre de miniatura y pantalla completa.
 
 ## Contenedores de distribuciones
 

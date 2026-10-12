@@ -10,17 +10,17 @@ La raíz conserva el código Delphi. `linux/` contiene una implementación nueva
 | Lápiz/grosor | Implementado |
 | Pinceles normal, spray, círculo translúcido, línea translúcida y textura | Brush, Airbrush, Watercolor, Marker y Crayon; trazos Qt diferentes de GDI |
 | Goma, rellenar, recoger color | Implementado |
-| Texto/fuente/estilos | Diálogos de texto y fuente; se rasteriza al aceptar |
-| Selección rectangular/libre/movimiento | Implementado con máscara de selección libre |
+| Texto/fuente/estilos | Editor sobre el lienzo con ocho tiradores, cinta contextual, fuente, tamaño, estilos y fondo transparente/opaco; se rasteriza al confirmar |
+| Selección rectangular/libre/movimiento | Máscara de selección libre, movimiento y ocho tiradores para cambiar tamaño |
 | Copiar/cortar/pegar/pegar archivo | Implementado; pegar puede ampliar el lienzo |
 | Selección transparente | Color 2 como color transparente |
 | Recortar/escalar selección | Acciones de menú |
-| Cambiar tamaño/escalar lienzo | Dimensiones en píxeles; zonas nuevas con Color 2 |
+| Cambiar tamaño/escalar lienzo | Tiradores del lienzo y propiedades en píxeles/cm/pulgadas; zonas nuevas con Color 2 |
 | Rotar/voltear/sesgar/invertir | Selección o documento |
-| Formas | Línea, curva con dos controles, elipse, rectángulos, polígono, triángulos, rombo, pentágono, hexágono, flechas y estrellas |
+| Formas | Las 18 formas de la cinta original; figuras con tiradores antes de confirmar, curva con dos controles editables y vértices de polígono movibles |
 | Contorno/relleno | Color 1 y Color 2 |
 | Zoom 10–1000%/ajuste a ventana | Implementado |
-| Cuadrícula/reglas/miniatura/pantalla completa | Implementado; reglas como guías sobre el lienzo |
+| Cuadrícula/reglas/miniatura/pantalla completa | Reglas exteriores con indicador del cursor; miniatura en ventana independiente y pantalla completa de imagen |
 | Arrastrar y soltar | Un archivo local |
 | Imprimir/vista previa/configurar página | Qt/CUPS; PDF probado, impresora física pendiente |
 | Fondo de escritorio | Portal `SetWallpaperFile`; requiere backend compatible; pendiente de prueba GNOME/KDE real |
@@ -28,7 +28,9 @@ La raíz conserva el código Delphi. `linux/` contiene una implementación nueva
 
 ## Diferencias pendientes
 
-La interfaz Qt no reproduce exactamente la cinta Windows. Texto y formas se rasterizan al confirmar, salvo la fase de control de curvas/polígonos. No se reproducen los tiradores para cambiar tamaño del lienzo ni la edición posterior de todos los nodos de formas. Las selecciones se escalan desde el menú. No se reproducen las unidades cm/pulgadas ni el modo monocromo del diálogo Windows. El portal de fondo usa la configuración del escritorio, no los estilos del registro Windows.
+La interfaz reproduce las coordenadas y grupos del DFM, extrae sus iconos originales y conserva el diseño de Paint de la referencia: título con acceso rápido, pestañas File/Home/View, cinta, reglas, lienzo y barra de estado segmentada. `linux/scripts/extract-dfm-assets.py` y `assets/dfm-map.json` registran la procedencia. El texto se edita sobre el lienzo; las figuras siguen siendo editables hasta confirmar. Las fuentes libres Selawik y Carlito sustituyen las métricas de Segoe UI y Calibri cuando estas no están instaladas.
+
+Quedan diferencias de rasterización Qt/GDI, fuentes y diálogos nativos de archivos/impresión. El DFM del fork no incluye el botón «Edit with Paint 3D» ni modo monocromo en propiedades; no se añade una aplicación Paint 3D ficticia. El portal de fondo usa la configuración del escritorio, no los estilos del registro Windows. No se certifica equivalencia píxel por píxel ni integración completa en todos los escritorios.
 
 Por esas diferencias y las integraciones no verificadas, esta versión es **preview 0.1.0**, no equivalencia completa certificada.
 
@@ -37,8 +39,9 @@ Por esas diferencias y las integraciones no verificadas, esta versión es **prev
 - Botón izquierdo: Color 1. Derecho: Color 2. `X` intercambia colores.
 - `Shift` restringe proporciones de formas.
 - Polígono: clics para vértices; `Enter` o botón derecho confirma.
-- Curva: arrastrar extremos, luego hacer clic en dos puntos de control. `Enter` acepta, `Escape` cancela.
-- Selección: arrastrar para crear; arrastrar dentro para mover. Las transformaciones afectan la selección existente.
+- Curva: arrastrar extremos, hacer clic en dos puntos de control y arrastrarlos para ajustar. `Enter` acepta, `Escape` cancela.
+- Selección: arrastrar para crear; arrastrar dentro para mover o sus tiradores para cambiar tamaño. Las transformaciones afectan la selección existente.
+- Texto: arrastrar un rectángulo, escribir y ajustar desde la pestaña Text. Cambiar de herramienta o `Ctrl+Enter` confirma; `Escape` cancela.
 - `Ctrl+Z` deshace; `Ctrl+Shift+Z` rehace.
 
 ## Compatibilidad

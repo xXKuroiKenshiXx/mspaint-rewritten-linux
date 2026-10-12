@@ -5,6 +5,6 @@ python -m PyInstaller --noconfirm --clean --onedir --name mspaint-rewritten-linu
   --hidden-import PySide6.QtDBus \
   --exclude-module PySide6.QtWebEngineCore --exclude-module PySide6.QtWebEngineWidgets \
   --exclude-module PySide6.QtQml --exclude-module PySide6.QtQuick \
-  --add-data '../LICENSE:licenses' launcher.py
+  --add-data '../LICENSE:licenses' --add-data 'mspaint/assets:mspaint/assets' launcher.py
 python scripts/collect-licenses.py
 python scripts/package.py

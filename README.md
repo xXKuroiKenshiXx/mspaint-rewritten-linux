@@ -2,9 +2,9 @@
 
 Adaptación nativa Linux del proyecto MIT [mspaint-rewritten de Codrut](https://github.com/Codrax/mspaint-rewritten), conservando las correcciones de [ripDZL/core-stability-phase1](https://github.com/ripDZL/mspaint-rewritten/tree/fix/core-stability-phase1).
 
-**Preview 0.1.0:** editor raster con Qt Widgets: dibujo, selecciones, texto, portapapeles, transformaciones, deshacer, archivos, impresión y widgets de visualización. No es el Paint oficial de Microsoft. Consulta [cobertura y diferencias](docs/PORTING.md), [revisión Windows](docs/UPSTREAM-REVIEW.md) y [validación](docs/VALIDATION.md).
+**Preview 0.1.0:** port nativo con la cinta, disposición y recursos gráficos del formulario Delphi original. Incluye texto editable dentro del lienzo, tiradores de selección y formas, reglas exteriores, propiedades y ventanas de visualización. La captura corresponde a la aplicación ejecutándose en Linux. Consulta [cobertura y diferencias](docs/PORTING.md), [revisión Windows](docs/UPSTREAM-REVIEW.md) y [validación](docs/VALIDATION.md).
 
-![Editor Linux](linux-preview.png)
+![Editor Linux](paint-clone-preview.png)
 
 ## Descargas
 

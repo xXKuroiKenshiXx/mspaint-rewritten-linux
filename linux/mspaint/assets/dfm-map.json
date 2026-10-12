@@ -1,0 +1,4194 @@
+{
+  "PaintForm.dfm:MsPaint": {
+    "type": "TMsPaint",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Caption": "'Untitled - Paint'"
+  },
+  "PaintForm.dfm:TitleBarPanel1": {
+    "type": "TTitleBarPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "1284",
+    "Height": "41"
+  },
+  "PaintForm.dfm:Title": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "275",
+    "Top": "5",
+    "Width": "86",
+    "Height": "31",
+    "Caption": "'Untitled - Paint'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Text_View": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "195",
+    "Top": "3",
+    "Width": "65",
+    "Height": "38",
+    "Caption": "'Text Tools'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:ToolBar16": {
+    "type": "TToolBar",
+    "file": "PaintForm.dfm",
+    "Left": "32",
+    "Top": "3",
+    "Width": "118",
+    "Height": "35",
+    "Caption": "'ToolBar16'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:ToolButton5": {
+    "type": "TToolButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "8",
+    "Caption": "'ToolButton5'",
+    "ImageName": "'VCL-Metropolis-UI'"
+  },
+  "PaintForm.dfm:ToolButton1": {
+    "type": "TToolButton",
+    "file": "PaintForm.dfm",
+    "Left": "8",
+    "Top": "0",
+    "ImageName": "'AboutBox'"
+  },
+  "PaintForm.dfm:ToolButton2": {
+    "type": "TToolButton",
+    "file": "PaintForm.dfm",
+    "Left": "42",
+    "Top": "0",
+    "ImageName": "'FireMonkey-Metropolis-UI'"
+  },
+  "PaintForm.dfm:ToolButton3": {
+    "type": "TToolButton",
+    "file": "PaintForm.dfm",
+    "Left": "76",
+    "Top": "0",
+    "ImageName": "'Type'"
+  },
+  "PaintForm.dfm:ToolButton6": {
+    "type": "TToolButton",
+    "file": "PaintForm.dfm",
+    "Left": "110",
+    "Top": "0",
+    "Width": "8",
+    "Caption": "'ToolButton6'",
+    "ImageName": "'VCL-Metropolis-UI'"
+  },
+  "PaintForm.dfm:Panel1": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "41",
+    "Width": "1284",
+    "Height": "24",
+    "Caption": "'Panel1'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:PaintBox2": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "24",
+    "Align": "alLeft",
+    "OnClick": "ExpandFile"
+  },
+  "PaintForm.dfm:PaintBox3": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "65",
+    "Top": "0",
+    "Width": "65",
+    "Height": "24",
+    "Align": "alLeft",
+    "Tag": "1",
+    "OnClick": "ClickPB"
+  },
+  "PaintForm.dfm:PaintBox4": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "130",
+    "Top": "0",
+    "Width": "65",
+    "Height": "24",
+    "Align": "alLeft",
+    "Tag": "2",
+    "OnClick": "ClickPB"
+  },
+  "PaintForm.dfm:PaintBox1": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "195",
+    "Top": "0",
+    "Width": "65",
+    "Height": "24",
+    "Align": "alLeft",
+    "Tag": "3",
+    "OnClick": "ClickPB"
+  },
+  "PaintForm.dfm:PaintBox10": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "260",
+    "Top": "0",
+    "Width": "109",
+    "Height": "24",
+    "Align": "alLeft",
+    "Tag": "4",
+    "OnClick": "ClickPB"
+  },
+  "PaintForm.dfm:CButton1": {
+    "type": "CButton",
+    "file": "PaintForm.dfm",
+    "Left": "1260",
+    "Top": "0",
+    "Width": "24",
+    "Height": "24",
+    "Align": "alRight",
+    "Hint": "'Help'",
+    "OnClick": "CButton1Click",
+    "glyph": "PaintForm_CButton1.png",
+    "glyph_size": [
+      512,
+      512
+    ]
+  },
+  "PaintForm.dfm:Panel2": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "65",
+    "Width": "1284",
+    "Height": "108",
+    "Caption": "'Panel1'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:PaintBox5": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "1284",
+    "Height": "1",
+    "Align": "alTop",
+    "Tag": "2",
+    "OnClick": "ClickPB"
+  },
+  "PaintForm.dfm:Panel4": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "4",
+    "Top": "5",
+    "Width": "1276",
+    "Height": "99",
+    "Caption": "'Panel4'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:Page_View": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "1276",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:Label16": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "214",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label17": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "308",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel6": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "209",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton2": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'Zoom In'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton6Click",
+    "glyph": "PaintForm_SpeedButton2.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton1": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "65",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'Zoom Out'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton7Click",
+    "glyph": "PaintForm_SpeedButton1.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton5": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "130",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'100%'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton5Click",
+    "glyph": "PaintForm_SpeedButton5.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:Panel7": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "209",
+    "Height": "16",
+    "Caption": "'Zoom'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel8": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "314",
+    "Top": "0",
+    "Width": "130",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton3": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "83",
+    "Caption": "'Full screen'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton3Click",
+    "glyph": "PaintForm_SpeedButton3.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton4": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "65",
+    "Top": "0",
+    "Width": "65",
+    "Height": "83",
+    "Caption": "'Thumbnail'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton4Click",
+    "glyph": "PaintForm_SpeedButton4.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:Panel9": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "130",
+    "Height": "16",
+    "Caption": "'Display'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel10": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "220",
+    "Top": "0",
+    "Width": "83",
+    "Height": "99",
+    "Caption": "'Show or Hide'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel15": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "83",
+    "Height": "16",
+    "Caption": "'Show or Hide'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:CheckBox1": {
+    "type": "TCheckBox",
+    "file": "PaintForm.dfm",
+    "Left": "4",
+    "Top": "13",
+    "Width": "77",
+    "Height": "17",
+    "Caption": "'Rulers'",
+    "OnClick": "CheckBox1Click"
+  },
+  "PaintForm.dfm:CheckBox2": {
+    "type": "TCheckBox",
+    "file": "PaintForm.dfm",
+    "Left": "4",
+    "Top": "36",
+    "Width": "77",
+    "Height": "17",
+    "Caption": "'Gridlines'",
+    "OnClick": "CheckBox2Click"
+  },
+  "PaintForm.dfm:CheckBox3": {
+    "type": "TCheckBox",
+    "file": "PaintForm.dfm",
+    "Left": "4",
+    "Top": "57",
+    "Width": "77",
+    "Height": "17",
+    "Caption": "'Status bar'",
+    "OnClick": "CheckBox3Click"
+  },
+  "PaintForm.dfm:Page_Text": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "1276",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:Label24": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "433",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label25": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "129",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label28": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "422",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label29": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "313",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label30": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "550",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel30": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "124",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel31": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "124",
+    "Height": "16",
+    "Caption": "'Clipboard'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel32": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton29": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "53",
+    "Align": "alTop",
+    "OnClick": "SpeedButton29Click",
+    "glyph": "PaintForm_SpeedButton29.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton30": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "53",
+    "Width": "65",
+    "Height": "27",
+    "Caption": "'Paste'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:Panel33": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "65",
+    "Top": "0",
+    "Width": "59",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:SpeedButton31": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "59",
+    "Height": "28",
+    "Caption": "'Cut'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton31Click",
+    "glyph": "PaintForm_SpeedButton31.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton32": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "28",
+    "Width": "59",
+    "Height": "28",
+    "Caption": "'Copy'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton32Click",
+    "glyph": "PaintForm_SpeedButton32.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel34": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "135",
+    "Top": "0",
+    "Width": "173",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Font_Bold": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "65",
+    "Top": "46",
+    "Width": "23",
+    "Height": "23",
+    "Caption": "'B'",
+    "OnClick": "Font_BoldClick"
+  },
+  "PaintForm.dfm:Font_Italic": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "91",
+    "Top": "46",
+    "Width": "23",
+    "Height": "23",
+    "Caption": "'I'",
+    "OnClick": "Font_BoldClick"
+  },
+  "PaintForm.dfm:Font_Underline": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "118",
+    "Top": "46",
+    "Width": "23",
+    "Height": "23",
+    "Caption": "'U'",
+    "OnClick": "Font_BoldClick"
+  },
+  "PaintForm.dfm:Font_Striked": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "146",
+    "Top": "46",
+    "Width": "23",
+    "Height": "23",
+    "Caption": "'abc'",
+    "OnClick": "Font_BoldClick"
+  },
+  "PaintForm.dfm:Panel35": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "173",
+    "Height": "16",
+    "Caption": "'Font'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Font_List": {
+    "type": "TComboBox",
+    "file": "PaintForm.dfm",
+    "Left": "3",
+    "Top": "14",
+    "Width": "170",
+    "Height": "24"
+  },
+  "PaintForm.dfm:Font_Size": {
+    "type": "TComboBox",
+    "file": "PaintForm.dfm",
+    "Left": "3",
+    "Top": "46",
+    "Width": "56",
+    "Height": "23"
+  },
+  "PaintForm.dfm:Panel36": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "319",
+    "Top": "0",
+    "Width": "98",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel41": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "98",
+    "Height": "16",
+    "Caption": "'Background'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel46": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "98",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:SpeedButton66": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "98",
+    "Height": "28",
+    "Caption": "'Opaque'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton66Click",
+    "glyph": "PaintForm_SpeedButton66.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton67": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "28",
+    "Width": "98",
+    "Height": "28",
+    "Caption": "'Transparent'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton66Click",
+    "glyph": "PaintForm_SpeedButton67.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel45": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "439",
+    "Top": "0",
+    "Width": "106",
+    "Height": "99",
+    "Caption": "'Show or Hide'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel47": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "106",
+    "Height": "16",
+    "Caption": "'Utilities'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:CheckBox4": {
+    "type": "TCheckBox",
+    "file": "PaintForm.dfm",
+    "Left": "3",
+    "Top": "11",
+    "Width": "100",
+    "Height": "17",
+    "Caption": "'Show editor'",
+    "OnClick": "CheckBox4Click"
+  },
+  "PaintForm.dfm:Page_Print": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "1276",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:Label2": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "145",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label31": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "365",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label32": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "441",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel62": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "151",
+    "Top": "0",
+    "Width": "209",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton100": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'Zoom In'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton6Click",
+    "glyph": "PaintForm_SpeedButton100.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton101": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "65",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'Zoom Out'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton7Click",
+    "glyph": "PaintForm_SpeedButton101.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton102": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "130",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'100%'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton5Click",
+    "glyph": "PaintForm_SpeedButton102.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:Panel63": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "209",
+    "Height": "16",
+    "Caption": "'Zoom'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel64": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "371",
+    "Top": "0",
+    "Width": "65",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton103": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "83",
+    "Caption": "'Close print'",
+    "Align": "alLeft",
+    "OnClick": "SpeedButton103Click",
+    "glyph": "PaintForm_SpeedButton103.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:Panel65": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "65",
+    "Height": "16",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel66": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "140",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton105": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'Print'",
+    "Align": "alLeft",
+    "OnClick": "PrinterPrint",
+    "glyph": "PaintForm_SpeedButton105.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton106": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "65",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'Page setup'",
+    "Align": "alLeft",
+    "OnClick": "PrinterPrint",
+    "glyph": "PaintForm_SpeedButton106.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:Panel67": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "140",
+    "Height": "16",
+    "Caption": "'Print'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Page_Home": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "1276",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:Label18": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "274",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label19": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "125",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label20": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "749",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label21": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "452",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label22": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "386",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label23": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "815",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label27": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "1256",
+    "Top": "0",
+    "Width": "1",
+    "Height": "99",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel5": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "458",
+    "Top": "0",
+    "Width": "286",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel11": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "286",
+    "Height": "16",
+    "Caption": "'Shapes'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel48": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "205",
+    "Height": "80",
+    "Caption": "'Panel48'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton82": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "50",
+    "Width": "25",
+    "Height": "26",
+    "Align": "alLeft",
+    "Tag": "17",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton82.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton83": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "25",
+    "Top": "50",
+    "Width": "25",
+    "Height": "26",
+    "Align": "alLeft",
+    "Tag": "18",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton83.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel49": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "201",
+    "Height": "25",
+    "Caption": "'Panel48'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:SpeedButton6": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "1",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton6.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton7": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "25",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "2",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton7.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton64": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "50",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "3",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton64.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton65": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "75",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "4",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton65.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton68": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "100",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "5",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton68.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton69": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "125",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "6",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton69.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton70": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "150",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "7",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton70.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton71": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "175",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "8",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton71.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel52": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "25",
+    "Width": "201",
+    "Height": "25",
+    "Caption": "'Panel48'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:SpeedButton74": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "9",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton74.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton75": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "25",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "10",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton75.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton76": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "50",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "11",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton76.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton77": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "75",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "12",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton77.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton78": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "100",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "13",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton78.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton79": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "125",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "14",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton79.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton80": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "150",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "15",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton80.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton81": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "175",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "16",
+    "OnClick": "ShapeSelect",
+    "glyph": "PaintForm_SpeedButton81.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel50": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "205",
+    "Top": "0",
+    "Width": "81",
+    "Height": "80",
+    "Caption": "'Panel50'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:SpeedButton72": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "81",
+    "Height": "25",
+    "Caption": "'Outline'",
+    "Align": "alTop",
+    "OnClick": "ButtonPressRepaint",
+    "glyph": "PaintForm_SpeedButton72.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton73": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "25",
+    "Width": "81",
+    "Height": "25",
+    "Caption": "'Fill'",
+    "Align": "alTop",
+    "OnClick": "ButtonPressRepaint",
+    "glyph": "PaintForm_SpeedButton73.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel12": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "120",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel13": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "120",
+    "Height": "16",
+    "Caption": "'Clipboard'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel14": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton9": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "53",
+    "Align": "alTop",
+    "OnClick": "SpeedButton9Click",
+    "glyph": "PaintForm_SpeedButton9.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton11": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "53",
+    "Width": "55",
+    "Height": "27",
+    "Caption": "'Paste'",
+    "Align": "alClient",
+    "OnClick": "SpeedButton11Click"
+  },
+  "PaintForm.dfm:Panel16": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "55",
+    "Top": "0",
+    "Width": "65",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:SpeedButton10": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "28",
+    "Caption": "'Cut'",
+    "Align": "alTop",
+    "Tag": "1",
+    "OnClick": "CopyCut",
+    "glyph": "PaintForm_SpeedButton10.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton12": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "28",
+    "Width": "65",
+    "Height": "28",
+    "Caption": "'Copy'",
+    "Align": "alTop",
+    "OnClick": "CopyCut",
+    "glyph": "PaintForm_SpeedButton12.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel17": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "131",
+    "Top": "0",
+    "Width": "138",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel18": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "138",
+    "Height": "16",
+    "Caption": "'Image'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel19": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton13": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "53",
+    "Align": "alTop",
+    "OnClick": "SelectTool"
+  },
+  "PaintForm.dfm:SpeedButton14": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "53",
+    "Width": "55",
+    "Height": "27",
+    "Caption": "'Select'",
+    "Align": "alClient",
+    "OnClick": "SpeedButton14Click"
+  },
+  "PaintForm.dfm:Panel20": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "55",
+    "Top": "0",
+    "Width": "83",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:SpeedButton15": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "83",
+    "Height": "25",
+    "Caption": "'Crop'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton15Click",
+    "glyph": "PaintForm_SpeedButton15.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton16": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "50",
+    "Width": "83",
+    "Height": "25",
+    "Caption": "'Rotate'#9660",
+    "Align": "alTop",
+    "OnClick": "SpeedButton16Click",
+    "glyph": "PaintForm_SpeedButton16.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton17": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "25",
+    "Width": "83",
+    "Height": "25",
+    "Caption": "'Resize'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton17Click",
+    "glyph": "PaintForm_SpeedButton17.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel21": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "280",
+    "Top": "0",
+    "Width": "101",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton23": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "4",
+    "Top": "46",
+    "Width": "25",
+    "Height": "21",
+    "Align": "alLeft",
+    "Tag": "4",
+    "OnClick": "SelectTool",
+    "glyph": "PaintForm_SpeedButton23.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton24": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "37",
+    "Top": "46",
+    "Width": "25",
+    "Height": "21",
+    "Align": "alLeft",
+    "Tag": "5",
+    "OnClick": "SelectTool",
+    "glyph": "PaintForm_SpeedButton24.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton25": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "70",
+    "Top": "46",
+    "Width": "25",
+    "Height": "21",
+    "Align": "alLeft",
+    "Tag": "6",
+    "OnClick": "SelectTool",
+    "glyph": "PaintForm_SpeedButton25.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel22": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "101",
+    "Height": "16",
+    "Caption": "'Tools'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel26": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "6",
+    "Width": "101",
+    "Height": "40",
+    "Caption": "'Panel26'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:SpeedButton19": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "4",
+    "Top": "0",
+    "Width": "25",
+    "Height": "40",
+    "Align": "alLeft",
+    "Tag": "1",
+    "OnClick": "SelectTool",
+    "glyph": "PaintForm_SpeedButton19.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton18": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "37",
+    "Top": "0",
+    "Width": "25",
+    "Height": "40",
+    "Align": "alLeft",
+    "Tag": "2",
+    "OnClick": "SelectTool",
+    "glyph": "PaintForm_SpeedButton18.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton20": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "70",
+    "Top": "0",
+    "Width": "25",
+    "Height": "40",
+    "Align": "alLeft",
+    "Tag": "3",
+    "OnClick": "SelectTool",
+    "glyph": "PaintForm_SpeedButton20.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel51": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "70",
+    "Width": "101",
+    "Height": "10",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel23": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "392",
+    "Top": "0",
+    "Width": "55",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel24": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "55",
+    "Height": "16",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel25": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton21": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "53",
+    "Align": "alTop",
+    "Tag": "7",
+    "OnClick": "SelectTool",
+    "glyph": "PaintForm_SpeedButton21.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton22": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "53",
+    "Width": "55",
+    "Height": "27",
+    "Caption": "'Brushes'",
+    "Align": "alClient",
+    "OnClick": "SpeedButton22Click"
+  },
+  "PaintForm.dfm:Panel27": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "755",
+    "Top": "0",
+    "Width": "55",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel28": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "55",
+    "Height": "16",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Panel29": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "80",
+    "Caption": "'Panel14'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton26": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "80",
+    "Caption": "'Size'",
+    "Align": "alTop",
+    "Tag": "7",
+    "OnClick": "SpeedButton26Click",
+    "glyph": "PaintForm_SpeedButton26.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:ColorPicker": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "821",
+    "Top": "0",
+    "Width": "430",
+    "Height": "99",
+    "Caption": "'Panel5'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:SpeedButton27": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "55",
+    "Height": "80",
+    "Caption": "'Color'",
+    "Align": "alLeft",
+    "Tag": "7",
+    "glyph": "PaintForm_SpeedButton27.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton28": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "55",
+    "Top": "0",
+    "Width": "55",
+    "Height": "80",
+    "Caption": "'Color'",
+    "Align": "alLeft",
+    "Tag": "7",
+    "glyph": "PaintForm_SpeedButton28.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton63": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "370",
+    "Top": "0",
+    "Width": "60",
+    "Height": "80",
+    "Caption": "'Edit'",
+    "Align": "alRight",
+    "Tag": "7",
+    "OnClick": "SpeedButton63Click",
+    "glyph": "PaintForm_SpeedButton63.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:Panel37": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "83",
+    "Width": "430",
+    "Height": "16",
+    "Caption": "'Colors'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Colors_Container": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "110",
+    "Top": "0",
+    "Width": "260",
+    "Height": "80",
+    "Caption": "'Panel41'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:Panel42": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "50",
+    "Width": "260",
+    "Height": "25",
+    "Caption": "'Panel42'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:SpeedButton8": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "200",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "29",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton8.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton34": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "225",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "30",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton34.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton35": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "175",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "28",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton35.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton36": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "150",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "27",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton36.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton37": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "125",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "26",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton37.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton38": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "100",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "25",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton38.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton39": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "75",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "24",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton39.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton40": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "50",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "23",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton40.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton41": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "25",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "22",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton41.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton42": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "21",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton42.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:Panel43": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "25",
+    "Width": "260",
+    "Height": "25",
+    "Caption": "'Panel42'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:SpeedButton43": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "200",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "19",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton43.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton44": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "225",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "20",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton44.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton45": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "175",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "18",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton45.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton46": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "150",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "17",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton46.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton47": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "125",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "16",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton47.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton48": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "100",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "15",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton48.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton49": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "75",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "14",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton49.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton50": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "50",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "13",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton50.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton51": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "25",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "12",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton51.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton52": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "11",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton52.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:Panel44": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "260",
+    "Height": "25",
+    "Caption": "'Panel42'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:SpeedButton53": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "200",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "9",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton53.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton54": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "225",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "10",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton54.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton55": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "175",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "8",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton55.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton56": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "150",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "7",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton56.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton57": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "125",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "6",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton57.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton58": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "100",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "5",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton58.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton59": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "75",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "4",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton59.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton60": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "50",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "3",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton60.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton61": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "25",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "2",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton61.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton62": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "25",
+    "Height": "25",
+    "Align": "alLeft",
+    "Tag": "1",
+    "OnClick": "ColorSelect",
+    "glyph": "PaintForm_SpeedButton62.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:StatusBar": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "745",
+    "Width": "1284",
+    "Height": "24",
+    "Caption": "'Panel1'",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:Label4": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "5",
+    "Top": "0",
+    "Width": "16",
+    "Height": "20",
+    "Caption": "#59225",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label5": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "26",
+    "Top": "0",
+    "Width": "116",
+    "Height": "20",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label6": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "147",
+    "Top": "0",
+    "Width": "1",
+    "Height": "20",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label7": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "158",
+    "Top": "0",
+    "Width": "16",
+    "Height": "20",
+    "Caption": "#62471",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label8": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "179",
+    "Top": "0",
+    "Width": "116",
+    "Height": "20",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label9": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "311",
+    "Top": "0",
+    "Width": "16",
+    "Height": "20",
+    "Caption": "#59571",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label10": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "332",
+    "Top": "0",
+    "Width": "116",
+    "Height": "20",
+    "Caption": "'245 x 320px'",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label11": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "606",
+    "Top": "0",
+    "Width": "1",
+    "Height": "20",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label12": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "464",
+    "Top": "0",
+    "Width": "16",
+    "Height": "20",
+    "Caption": "#59214",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label13": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "485",
+    "Top": "0",
+    "Width": "116",
+    "Height": "20",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label14": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "453",
+    "Top": "0",
+    "Width": "1",
+    "Height": "20",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Label15": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "300",
+    "Top": "0",
+    "Width": "1",
+    "Height": "20",
+    "Align": "alLeft"
+  },
+  "PaintForm.dfm:Panel60": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "976",
+    "Top": "0",
+    "Width": "304",
+    "Height": "20",
+    "Caption": "'Panel60'",
+    "Align": "alRight"
+  },
+  "PaintForm.dfm:PaintBox6": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "284",
+    "Top": "0",
+    "Width": "20",
+    "Height": "20",
+    "Align": "alRight"
+  },
+  "PaintForm.dfm:Label1": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "41",
+    "Top": "0",
+    "Width": "1",
+    "Height": "20",
+    "Align": "alRight"
+  },
+  "PaintForm.dfm:Label3": {
+    "type": "TLabel",
+    "file": "PaintForm.dfm",
+    "Left": "47",
+    "Top": "0",
+    "Width": "52",
+    "Height": "20",
+    "Caption": "'100%'",
+    "Align": "alRight"
+  },
+  "PaintForm.dfm:TrackBar1": {
+    "type": "TTrackBar",
+    "file": "PaintForm.dfm",
+    "Left": "125",
+    "Top": "0",
+    "Width": "133",
+    "Height": "20",
+    "Align": "alRight",
+    "Hint": "'Zoom'"
+  },
+  "PaintForm.dfm:CButton2": {
+    "type": "CButton",
+    "file": "PaintForm.dfm",
+    "Left": "261",
+    "Top": "0",
+    "Width": "20",
+    "Height": "20",
+    "Align": "alRight",
+    "Hint": "'Zoom In'",
+    "OnClick": "CButton2Click"
+  },
+  "PaintForm.dfm:CButton3": {
+    "type": "CButton",
+    "file": "PaintForm.dfm",
+    "Left": "102",
+    "Top": "0",
+    "Width": "20",
+    "Height": "20",
+    "Align": "alRight",
+    "Hint": "'Zoom Out'",
+    "OnClick": "CButton3Click"
+  },
+  "PaintForm.dfm:Panel3": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "173",
+    "Width": "1284",
+    "Height": "572",
+    "Caption": "'Panel3'",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:PaintBox7": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "1284",
+    "Height": "20",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:PaintBox8": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "20",
+    "Width": "20",
+    "Height": "552",
+    "Align": "alLeft",
+    "Tag": "1"
+  },
+  "PaintForm.dfm:ScrollBox1": {
+    "type": "TScrollBox",
+    "file": "PaintForm.dfm",
+    "Left": "20",
+    "Top": "20",
+    "Width": "1264",
+    "Height": "552",
+    "Align": "alClient",
+    "OnClick": "ScrollBox1Click"
+  },
+  "PaintForm.dfm:CornerSize": {
+    "type": "TShape",
+    "file": "PaintForm.dfm",
+    "Left": "868",
+    "Top": "520",
+    "Width": "6",
+    "Height": "6"
+  },
+  "PaintForm.dfm:LeftSize": {
+    "type": "TShape",
+    "file": "PaintForm.dfm",
+    "Left": "868",
+    "Top": "200",
+    "Width": "6",
+    "Height": "6",
+    "Tag": "1"
+  },
+  "PaintForm.dfm:TopSize": {
+    "type": "TShape",
+    "file": "PaintForm.dfm",
+    "Left": "396",
+    "Top": "527",
+    "Width": "6",
+    "Height": "6",
+    "Tag": "2"
+  },
+  "PaintForm.dfm:DotsSize": {
+    "type": "TShape",
+    "file": "PaintForm.dfm",
+    "Left": "5",
+    "Top": "5",
+    "Width": "117",
+    "Height": "105"
+  },
+  "PaintForm.dfm:CanvasHolder": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "5",
+    "Top": "5",
+    "Width": "860",
+    "Height": "519",
+    "Caption": "'Panel4'",
+    "OnClick": "CanvasHolderClick"
+  },
+  "PaintForm.dfm:DrawBox": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "856",
+    "Height": "515",
+    "Align": "alClient"
+  },
+  "PaintForm.dfm:InvisibleEdit": {
+    "type": "TMemo",
+    "file": "PaintForm.dfm",
+    "Left": "583",
+    "Top": "52",
+    "Width": "0",
+    "Height": "129"
+  },
+  "PaintForm.dfm:Panel53": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "754",
+    "Top": "0",
+    "Width": "231",
+    "Height": "106"
+  },
+  "PaintForm.dfm:PaintBox9": {
+    "type": "TPaintBox",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "37",
+    "Width": "227",
+    "Height": "65",
+    "Align": "alBottom"
+  },
+  "PaintForm.dfm:TrackBar2": {
+    "type": "TTrackBar",
+    "file": "PaintForm.dfm",
+    "Left": "8",
+    "Top": "0",
+    "Width": "209",
+    "Height": "45"
+  },
+  "PaintForm.dfm:Panel54": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "4",
+    "Top": "0",
+    "Width": "117",
+    "Height": "58"
+  },
+  "PaintForm.dfm:SpeedButton84": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "113",
+    "Height": "28",
+    "Caption": "'&Paste'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton84Click",
+    "glyph": "PaintForm_SpeedButton84.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton85": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "28",
+    "Width": "113",
+    "Height": "28",
+    "Caption": "'Paste &from'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton85Click",
+    "glyph": "PaintForm_SpeedButton85.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel55": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "134",
+    "Top": "0",
+    "Width": "178",
+    "Height": "200"
+  },
+  "PaintForm.dfm:SpeedButton86": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "25",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'&Rectangular Selection'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton86Click",
+    "glyph": "PaintForm_SpeedButton86.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton87": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "106",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'Select &all'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton87Click",
+    "glyph": "PaintForm_SpeedButton87.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton88": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "134",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'&Delete'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton88Click",
+    "glyph": "PaintForm_SpeedButton88.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton89": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "162",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'&Transparent selection'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton89Click",
+    "glyph": "PaintForm_SpeedButton89.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton104": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "53",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'&Free-Form Selection'",
+    "Align": "alTop",
+    "Tag": "1",
+    "OnClick": "SpeedButton86Click",
+    "glyph": "PaintForm_SpeedButton104.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel56": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "174",
+    "Height": "25",
+    "Caption": "'  Selection Shapes'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:Panel57": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "81",
+    "Width": "174",
+    "Height": "25",
+    "Caption": "'  Selection Options'",
+    "Align": "alTop"
+  },
+  "PaintForm.dfm:Panel58": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "195",
+    "Top": "0",
+    "Width": "178",
+    "Height": "146"
+  },
+  "PaintForm.dfm:SpeedButton90": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'Rotate &right 90'#176",
+    "Align": "alTop",
+    "Tag": "1",
+    "OnClick": "SpeedButton90Click",
+    "glyph": "PaintForm_SpeedButton90.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton91": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "28",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'Rotate &left 90'#176",
+    "Align": "alTop",
+    "Tag": "2",
+    "OnClick": "SpeedButton90Click",
+    "glyph": "PaintForm_SpeedButton91.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton92": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "56",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'Ro&tate 180'#176",
+    "Align": "alTop",
+    "Tag": "3",
+    "OnClick": "SpeedButton90Click",
+    "glyph": "PaintForm_SpeedButton92.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton93": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "84",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'Flip vertical'",
+    "Align": "alTop",
+    "Tag": "4",
+    "OnClick": "SpeedButton90Click",
+    "glyph": "PaintForm_SpeedButton93.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:SpeedButton94": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "112",
+    "Width": "174",
+    "Height": "28",
+    "Caption": "'Flip vertical'",
+    "Align": "alTop",
+    "Tag": "5",
+    "OnClick": "SpeedButton90Click",
+    "glyph": "PaintForm_SpeedButton94.png",
+    "glyph_size": [
+      20,
+      20
+    ]
+  },
+  "PaintForm.dfm:Panel59": {
+    "type": "TPanel",
+    "file": "PaintForm.dfm",
+    "Left": "391",
+    "Top": "0",
+    "Width": "212",
+    "Height": "45"
+  },
+  "PaintForm.dfm:SpeedButton95": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "41",
+    "Height": "41",
+    "Align": "alLeft",
+    "OnClick": "SelectBrush",
+    "glyph": "PaintForm_SpeedButton95.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton96": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "41",
+    "Top": "0",
+    "Width": "41",
+    "Height": "41",
+    "Align": "alLeft",
+    "Tag": "1",
+    "OnClick": "SelectBrush",
+    "glyph": "PaintForm_SpeedButton96.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton97": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "123",
+    "Top": "0",
+    "Width": "41",
+    "Height": "41",
+    "Align": "alLeft",
+    "Tag": "3",
+    "OnClick": "SelectBrush",
+    "glyph": "PaintForm_SpeedButton97.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton98": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "164",
+    "Top": "0",
+    "Width": "41",
+    "Height": "41",
+    "Align": "alLeft",
+    "Tag": "4",
+    "OnClick": "SelectBrush",
+    "glyph": "PaintForm_SpeedButton98.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:SpeedButton99": {
+    "type": "TSpeedButton",
+    "file": "PaintForm.dfm",
+    "Left": "82",
+    "Top": "0",
+    "Width": "41",
+    "Height": "41",
+    "Align": "alLeft",
+    "Tag": "2",
+    "OnClick": "SelectBrush",
+    "glyph": "PaintForm_SpeedButton99.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:ActionManager1": {
+    "type": "TActionManager",
+    "file": "PaintForm.dfm",
+    "Left": "968",
+    "Top": "384",
+    "Caption": "'-'"
+  },
+  "PaintForm.dfm:Action1": {
+    "type": "TAction",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:Action2": {
+    "type": "TAction",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:Action3": {
+    "type": "TAction",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:Action4": {
+    "type": "TAction",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:ActionCopy": {
+    "type": "TAction",
+    "file": "PaintForm.dfm",
+    "Caption": "'Copy'"
+  },
+  "PaintForm.dfm:ActionCut": {
+    "type": "TAction",
+    "file": "PaintForm.dfm",
+    "Caption": "'Cut'"
+  },
+  "PaintForm.dfm:ActionSelectAll": {
+    "type": "TAction",
+    "file": "PaintForm.dfm",
+    "Caption": "'Select All'"
+  },
+  "PaintForm.dfm:ActionPasteClipboard": {
+    "type": "TAction",
+    "file": "PaintForm.dfm",
+    "Caption": "'Paste'"
+  },
+  "PaintForm.dfm:ActionClipboardFile": {
+    "type": "TAction",
+    "file": "PaintForm.dfm",
+    "Caption": "'ActionClipboardFile'"
+  },
+  "PaintForm.dfm:ActionPrint": {
+    "type": "TAction",
+    "file": "PaintForm.dfm",
+    "Caption": "'Print'"
+  },
+  "PaintForm.dfm:Action5": {
+    "type": "TAction",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:VirtualImageList16": {
+    "type": "TVirtualImageList",
+    "file": "PaintForm.dfm",
+    "Left": "992",
+    "Top": "176"
+  },
+  "PaintForm.dfm:ImageCollection1": {
+    "type": "TImageCollection",
+    "file": "PaintForm.dfm",
+    "Left": "992",
+    "Top": "240"
+  },
+  "PaintForm.dfm:SavePictureDialog1": {
+    "type": "TSavePictureDialog",
+    "file": "PaintForm.dfm",
+    "Left": "1112",
+    "Top": "238"
+  },
+  "PaintForm.dfm:SizePreview": {
+    "type": "TTimer",
+    "file": "PaintForm.dfm",
+    "Left": "964",
+    "Top": "446"
+  },
+  "PaintForm.dfm:CanvasUpdater": {
+    "type": "TTimer",
+    "file": "PaintForm.dfm",
+    "Left": "964",
+    "Top": "510"
+  },
+  "PaintForm.dfm:OpenPictureDialog1": {
+    "type": "TOpenPictureDialog",
+    "file": "PaintForm.dfm",
+    "Left": "1108",
+    "Top": "315"
+  },
+  "PaintForm.dfm:ImageList1": {
+    "type": "TImageList",
+    "file": "PaintForm.dfm",
+    "Left": "992",
+    "Top": "320"
+  },
+  "PaintForm.dfm:ColorDialog1": {
+    "type": "TColorDialog",
+    "file": "PaintForm.dfm",
+    "Left": "1097",
+    "Top": "187"
+  },
+  "PaintForm.dfm:BrushTick": {
+    "type": "TTimer",
+    "file": "PaintForm.dfm",
+    "Left": "964",
+    "Top": "574"
+  },
+  "PaintForm.dfm:CPrintDialog1": {
+    "type": "CPrintDialog",
+    "file": "PaintForm.dfm",
+    "Left": "673",
+    "Top": "243"
+  },
+  "PaintForm.dfm:ImageList2": {
+    "type": "TImageList",
+    "file": "PaintForm.dfm",
+    "Left": "1089",
+    "Top": "387",
+    "Width": "20",
+    "Height": "20"
+  },
+  "PaintForm.dfm:PopupMenu1": {
+    "type": "TPopupMenu",
+    "file": "PaintForm.dfm",
+    "Left": "457",
+    "Top": "331"
+  },
+  "PaintForm.dfm:Cut1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:Copy1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:Paste1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:N1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'-'"
+  },
+  "PaintForm.dfm:Crop1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Crop'",
+    "OnClick": "SpeedButton15Click"
+  },
+  "PaintForm.dfm:SelectAll1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm"
+  },
+  "PaintForm.dfm:Delete1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Delete'",
+    "OnClick": "SpeedButton88Click"
+  },
+  "PaintForm.dfm:N2": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'-'"
+  },
+  "PaintForm.dfm:Rotate1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Rotate'"
+  },
+  "PaintForm.dfm:RotateRight1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Rotate right 90'#176",
+    "OnClick": "RotateRight1Click"
+  },
+  "PaintForm.dfm:Rotateright901": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Rotate left 90'#176",
+    "OnClick": "Rotateright901Click"
+  },
+  "PaintForm.dfm:Rotate1801": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Rotate 180'#176",
+    "OnClick": "Rotate1801Click"
+  },
+  "PaintForm.dfm:Flip1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Flip'"
+  },
+  "PaintForm.dfm:FlipVertical1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Flip Vertical'",
+    "OnClick": "FlipVertical1Click"
+  },
+  "PaintForm.dfm:FlipHorizonta1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Flip Horizonta'",
+    "OnClick": "FlipHorizonta1Click"
+  },
+  "PaintForm.dfm:InvertColor1": {
+    "type": "TMenuItem",
+    "file": "PaintForm.dfm",
+    "Caption": "'Invert Color'",
+    "OnClick": "InvertColor1Click"
+  },
+  "PaintForm.dfm:ImageList3": {
+    "type": "TImageList",
+    "file": "PaintForm.dfm",
+    "Left": "1089",
+    "Top": "443",
+    "Width": "40",
+    "Height": "40"
+  },
+  "PaintForm.dfm:AnimateKeys": {
+    "type": "TTimer",
+    "file": "PaintForm.dfm",
+    "Left": "785",
+    "Top": "315"
+  },
+  "PaintForm.dfm:collection:AboutBox": {
+    "glyph": "PaintForm_collection_AboutBox.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "PaintForm.dfm:collection:FireMonkey-Metropolis-UI": {
+    "glyph": "PaintForm_collection_FireMonkey-Metropolis-UI.png",
+    "glyph_size": [
+      48,
+      48
+    ]
+  },
+  "PaintForm.dfm:collection:Type": {
+    "glyph": "PaintForm_collection_Type.png",
+    "glyph_size": [
+      256,
+      256
+    ]
+  },
+  "MenuForm.dfm:MenuPopup": {
+    "type": "TMenuPopup",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Caption": "'Paint Menu'"
+  },
+  "MenuForm.dfm:Panel1": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "523",
+    "Height": "24",
+    "Caption": "'Panel1'",
+    "Align": "alTop"
+  },
+  "MenuForm.dfm:Label16": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "65",
+    "Height": "24",
+    "Caption": "'File'",
+    "Align": "alLeft"
+  },
+  "MenuForm.dfm:Panel5": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "65",
+    "Top": "0",
+    "Width": "458",
+    "Height": "24",
+    "Caption": "'Panel5'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:Panel2": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "534",
+    "Width": "523",
+    "Height": "24",
+    "Caption": "'Panel1'",
+    "Align": "alBottom"
+  },
+  "MenuForm.dfm:Panel3": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "24",
+    "Width": "523",
+    "Height": "510",
+    "Caption": "'Panel3'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:Panel4": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "240",
+    "Top": "0",
+    "Width": "283",
+    "Height": "510",
+    "Caption": "'Panel3'",
+    "Align": "alRight"
+  },
+  "MenuForm.dfm:Panel7": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "283",
+    "Height": "25",
+    "Caption": "'Panel7'",
+    "Align": "alTop"
+  },
+  "MenuForm.dfm:Label6": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "3",
+    "Top": "3",
+    "Width": "273",
+    "Height": "15",
+    "Caption": "'Recent Pictures'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:Panel8": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "25",
+    "Width": "283",
+    "Height": "485",
+    "Caption": "'Panel7'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:Menu_Background": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "279",
+    "Height": "481",
+    "Caption": "'Panel7'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:SpeedButton11": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&Fill'",
+    "Align": "alTop",
+    "OnClick": "WallpaperTypeSelect",
+    "glyph": "MenuForm_SpeedButton11.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton12": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "50",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&Tile'",
+    "Align": "alTop",
+    "Tag": "2",
+    "OnClick": "WallpaperTypeSelect",
+    "glyph": "MenuForm_SpeedButton12.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton13": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "100",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&Center'",
+    "Align": "alTop",
+    "Tag": "1",
+    "OnClick": "WallpaperTypeSelect",
+    "glyph": "MenuForm_SpeedButton13.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label7": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "54",
+    "Top": "32",
+    "Width": "192",
+    "Height": "13",
+    "Caption": "'Fill the entire screen with the picture.'"
+  },
+  "MenuForm.dfm:Label8": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "54",
+    "Top": "81",
+    "Width": "146",
+    "Height": "13",
+    "Caption": "'Tile the picture so it repeats.'"
+  },
+  "MenuForm.dfm:Label9": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "54",
+    "Top": "132",
+    "Width": "203",
+    "Height": "13",
+    "Caption": "'Center the picture in the screen middle.'"
+  },
+  "MenuForm.dfm:Menu_Recents": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "279",
+    "Height": "481",
+    "Caption": "'Panel7'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:Menu_SaveAs": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "279",
+    "Height": "481",
+    "Caption": "'Panel7'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:SpeedButton14": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&PNG picture'",
+    "Align": "alTop",
+    "Tag": "1",
+    "OnClick": "SpeedButton18Click",
+    "glyph": "MenuForm_SpeedButton14.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton15": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "50",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&JPEG picture'",
+    "Align": "alTop",
+    "Tag": "2",
+    "OnClick": "SpeedButton18Click",
+    "glyph": "MenuForm_SpeedButton15.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton16": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "100",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&BMP picture'",
+    "Align": "alTop",
+    "Tag": "3",
+    "OnClick": "SpeedButton18Click",
+    "glyph": "MenuForm_SpeedButton16.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton17": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "150",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&GIF Picture'",
+    "Align": "alTop",
+    "Tag": "4",
+    "OnClick": "SpeedButton18Click",
+    "glyph": "MenuForm_SpeedButton17.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton18": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "200",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&Other formats'",
+    "Align": "alTop",
+    "OnClick": "SpeedButton18Click",
+    "glyph": "MenuForm_SpeedButton18.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label10": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "54",
+    "Top": "32",
+    "Width": "193",
+    "Height": "13",
+    "Caption": "'Save a photo or drawing for the web.'"
+  },
+  "MenuForm.dfm:Label11": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "54",
+    "Top": "81",
+    "Width": "187",
+    "Height": "13",
+    "Caption": "'Save a photo with jpeg compression'"
+  },
+  "MenuForm.dfm:Label12": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "54",
+    "Top": "132",
+    "Width": "218",
+    "Height": "13",
+    "Caption": "'Save ane kind of picture with high quality.'"
+  },
+  "MenuForm.dfm:Label13": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "54",
+    "Top": "183",
+    "Width": "225",
+    "Height": "13",
+    "Caption": "'Save a drawing with lower quality for email.'"
+  },
+  "MenuForm.dfm:Menu_Print": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "279",
+    "Height": "481",
+    "Caption": "'Panel7'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:Label14": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "54",
+    "Top": "133",
+    "Width": "222",
+    "Height": "13",
+    "Caption": "'Preview and make changed before printing'"
+  },
+  "MenuForm.dfm:SpeedButton19": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "50",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'Page &setup'",
+    "Align": "alTop",
+    "Tag": "3",
+    "OnClick": "SpeedButton21Click",
+    "glyph": "MenuForm_SpeedButton19.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label15": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "55",
+    "Top": "82",
+    "Width": "167",
+    "Height": "13",
+    "Caption": "'Change the layout of the printer'"
+  },
+  "MenuForm.dfm:SpeedButton20": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "100",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'Print pre&view'",
+    "Align": "alTop",
+    "Tag": "2",
+    "OnClick": "SpeedButton20Click",
+    "glyph": "MenuForm_SpeedButton20.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label17": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "55",
+    "Top": "33",
+    "Width": "215",
+    "Height": "13",
+    "Caption": "'Select a printer, numer of pages and print'"
+  },
+  "MenuForm.dfm:SpeedButton21": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "279",
+    "Height": "50",
+    "Caption": "'&Print'",
+    "Align": "alTop",
+    "Tag": "1",
+    "OnClick": "SpeedButton21Click",
+    "glyph": "MenuForm_SpeedButton21.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Panel6": {
+    "type": "TPanel",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "240",
+    "Height": "510",
+    "Caption": "'Panel3'",
+    "Align": "alClient"
+  },
+  "MenuForm.dfm:SpeedButton2": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'&New'",
+    "Align": "alTop",
+    "Tag": "1",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton2.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton1": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "45",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'&Open'",
+    "Align": "alTop",
+    "Tag": "2",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton1.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton3": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "90",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'&Save'",
+    "Align": "alTop",
+    "Tag": "3",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton3.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton4": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "135",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'Save &As                                       '#9654#65039",
+    "Align": "alTop",
+    "Tag": "4",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton4.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label2": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "50",
+    "Top": "185",
+    "Width": "185",
+    "Height": "1",
+    "Align": "alTop"
+  },
+  "MenuForm.dfm:SpeedButton5": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "191",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'&Print                                            '#9654#65039",
+    "Align": "alTop",
+    "Tag": "5",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton5.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton6": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "236",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'Sen&d in email'",
+    "Align": "alTop",
+    "Tag": "6",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton6.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label1": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "50",
+    "Top": "286",
+    "Width": "185",
+    "Height": "1",
+    "Align": "alTop"
+  },
+  "MenuForm.dfm:SpeedButton7": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "292",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'Set as desktop &background      '#9654#65039",
+    "Align": "alTop",
+    "Tag": "7",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton7.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label3": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "50",
+    "Top": "342",
+    "Width": "185",
+    "Height": "1",
+    "Align": "alTop"
+  },
+  "MenuForm.dfm:SpeedButton8": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "348",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'Prop&erties'",
+    "Align": "alTop",
+    "Tag": "8",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton8.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label4": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "50",
+    "Top": "454",
+    "Width": "185",
+    "Height": "1",
+    "Align": "alTop"
+  },
+  "MenuForm.dfm:SpeedButton9": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "404",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'Abou&t Paint'",
+    "Align": "alTop",
+    "Tag": "9",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton9.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:SpeedButton10": {
+    "type": "TSpeedButton",
+    "file": "MenuForm.dfm",
+    "Left": "0",
+    "Top": "460",
+    "Width": "240",
+    "Height": "45",
+    "Caption": "'E&xit'",
+    "Align": "alTop",
+    "Tag": "10",
+    "OnClick": "MenuItemClick",
+    "glyph": "MenuForm_SpeedButton10.png",
+    "glyph_size": [
+      40,
+      40
+    ]
+  },
+  "MenuForm.dfm:Label5": {
+    "type": "TLabel",
+    "file": "MenuForm.dfm",
+    "Left": "50",
+    "Top": "398",
+    "Width": "185",
+    "Height": "1",
+    "Align": "alTop"
+  },
+  "MenuForm.dfm:HideTimer": {
+    "type": "TTimer",
+    "file": "MenuForm.dfm",
+    "Left": "189",
+    "Top": "32"
+  },
+  "SaveForm.dfm:Save": {
+    "type": "TSave",
+    "file": "SaveForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Caption": "'Paint'"
+  },
+  "SaveForm.dfm:Msg": {
+    "type": "TLabel",
+    "file": "SaveForm.dfm",
+    "Left": "10",
+    "Top": "40",
+    "Width": "330",
+    "Height": "23",
+    "Caption": "'Do you want to save changes to'",
+    "Align": "alTop"
+  },
+  "SaveForm.dfm:Panel1": {
+    "type": "TPanel",
+    "file": "SaveForm.dfm",
+    "Left": "0",
+    "Top": "105",
+    "Width": "350",
+    "Height": "37",
+    "Align": "alBottom"
+  },
+  "SaveForm.dfm:Button1": {
+    "type": "TButton",
+    "file": "SaveForm.dfm",
+    "Left": "70",
+    "Top": "5",
+    "Width": "85",
+    "Height": "27",
+    "Caption": "'Save'",
+    "Align": "alRight"
+  },
+  "SaveForm.dfm:Button2": {
+    "type": "TButton",
+    "file": "SaveForm.dfm",
+    "Left": "260",
+    "Top": "5",
+    "Width": "85",
+    "Height": "27",
+    "Caption": "'Cancel'",
+    "Align": "alRight"
+  },
+  "SaveForm.dfm:Button3": {
+    "type": "TButton",
+    "file": "SaveForm.dfm",
+    "Left": "165",
+    "Top": "5",
+    "Width": "85",
+    "Height": "27",
+    "Caption": "'Don'#39't Save'",
+    "Align": "alRight"
+  },
+  "SaveForm.dfm:TitleBarPanel1": {
+    "type": "TTitleBarPanel",
+    "file": "SaveForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Width": "350",
+    "Height": "30"
+  },
+  "PropertiesForm.dfm:Properties": {
+    "type": "TProperties",
+    "file": "PropertiesForm.dfm",
+    "Left": "0",
+    "Top": "0",
+    "Caption": "'Image Properties'"
+  },
+  "PropertiesForm.dfm:Label7": {
+    "type": "TLabel",
+    "file": "PropertiesForm.dfm",
+    "Left": "8",
+    "Top": "280",
+    "Width": "35",
+    "Height": "15",
+    "Caption": "'Width:'"
+  },
+  "PropertiesForm.dfm:Label8": {
+    "type": "TLabel",
+    "file": "PropertiesForm.dfm",
+    "Left": "159",
+    "Top": "280",
+    "Width": "39",
+    "Height": "15",
+    "Caption": "'Height:'"
+  },
+  "PropertiesForm.dfm:Panel1": {
+    "type": "TPanel",
+    "file": "PropertiesForm.dfm",
+    "Left": "0",
+    "Top": "321",
+    "Width": "396",
+    "Height": "37",
+    "Align": "alBottom"
+  },
+  "PropertiesForm.dfm:Button1": {
+    "type": "TButton",
+    "file": "PropertiesForm.dfm",
+    "Left": "234",
+    "Top": "6",
+    "Width": "75",
+    "Height": "25",
+    "Caption": "'OK'",
+    "OnClick": "Button1Click"
+  },
+  "PropertiesForm.dfm:Button2": {
+    "type": "TButton",
+    "file": "PropertiesForm.dfm",
+    "Left": "315",
+    "Top": "6",
+    "Width": "75",
+    "Height": "25",
+    "Caption": "'Cancel'"
+  },
+  "PropertiesForm.dfm:GroupBox1": {
+    "type": "TGroupBox",
+    "file": "PropertiesForm.dfm",
+    "Left": "8",
+    "Top": "16",
+    "Width": "380",
+    "Height": "113",
+    "Caption": "'File Attributes'"
+  },
+  "PropertiesForm.dfm:Label1": {
+    "type": "TLabel",
+    "file": "PropertiesForm.dfm",
+    "Left": "16",
+    "Top": "32",
+    "Width": "58",
+    "Height": "15",
+    "Caption": "'Last Saved:'"
+  },
+  "PropertiesForm.dfm:Label2": {
+    "type": "TLabel",
+    "file": "PropertiesForm.dfm",
+    "Left": "160",
+    "Top": "32",
+    "Width": "71",
+    "Height": "15",
+    "Caption": "'Not Avalabile'"
+  },
+  "PropertiesForm.dfm:Label3": {
+    "type": "TLabel",
+    "file": "PropertiesForm.dfm",
+    "Left": "16",
+    "Top": "53",
+    "Width": "64",
+    "Height": "15",
+    "Caption": "'Size on disk:'"
+  },
+  "PropertiesForm.dfm:Label4": {
+    "type": "TLabel",
+    "file": "PropertiesForm.dfm",
+    "Left": "160",
+    "Top": "53",
+    "Width": "71",
+    "Height": "15",
+    "Caption": "'Not Avalabile'"
+  },
+  "PropertiesForm.dfm:Label5": {
+    "type": "TLabel",
+    "file": "PropertiesForm.dfm",
+    "Left": "16",
+    "Top": "74",
+    "Width": "59",
+    "Height": "15",
+    "Caption": "'Resolution:'"
+  },
+  "PropertiesForm.dfm:Label6": {
+    "type": "TLabel",
+    "file": "PropertiesForm.dfm",
+    "Left": "160",
+    "Top": "74",
+    "Width": "51",
+    "Height": "15",
+    "Caption": "'Unknown'"
+  },
+  "PropertiesForm.dfm:GroupBox2": {
+    "type": "TGroupBox",
+    "file": "PropertiesForm.dfm",
+    "Left": "8",
+    "Top": "135",
+    "Width": "193",
+    "Height": "122",
+    "Caption": "'Units'"
+  },
+  "PropertiesForm.dfm:RadioButton1": {
+    "type": "TRadioButton",
+    "file": "PropertiesForm.dfm",
+    "Left": "16",
+    "Top": "32",
+    "Width": "113",
+    "Height": "17",
+    "Caption": "'Inches'"
+  },
+  "PropertiesForm.dfm:RadioButton2": {
+    "type": "TRadioButton",
+    "file": "PropertiesForm.dfm",
+    "Left": "16",
+    "Top": "55",
+    "Width": "113",
+    "Height": "17",
+    "Caption": "'Centimeters'"
+  },
+  "PropertiesForm.dfm:RadioButton3": {
+    "type": "TRadioButton",
+    "file": "PropertiesForm.dfm",
+    "Left": "16",
+    "Top": "78",
+    "Width": "113",
+    "Height": "17",
+    "Caption": "'Pixels'"
+  },
+  "PropertiesForm.dfm:GroupBox3": {
+    "type": "TGroupBox",
+    "file": "PropertiesForm.dfm",
+    "Left": "207",
+    "Top": "135",
+    "Width": "181",
+    "Height": "122",
+    "Caption": "'Colors'"
+  },
+  "PropertiesForm.dfm:RadioButton4": {
+    "type": "TRadioButton",
+    "file": "PropertiesForm.dfm",
+    "Left": "16",
+    "Top": "32",
+    "Width": "113",
+    "Height": "17",
+    "Caption": "'Color'"
+  },
+  "PropertiesForm.dfm:Edit1": {
+    "type": "TEdit",
+    "file": "PropertiesForm.dfm",
+    "Left": "64",
+    "Top": "275",
+    "Width": "89",
+    "Height": "25"
+  },
+  "PropertiesForm.dfm:Edit2": {
+    "type": "TEdit",
+    "file": "PropertiesForm.dfm",
+    "Left": "214",
+    "Top": "275",
+    "Width": "89",
+    "Height": "25"
+  },
+  "PropertiesForm.dfm:Button3": {
+    "type": "TButton",
+    "file": "PropertiesForm.dfm",
+    "Left": "313",
+    "Top": "276",
+    "Width": "75",
+    "Height": "25",
+    "Caption": "'Default'",
+    "OnClick": "Button3Click"
+  }
+}

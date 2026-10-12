@@ -1,0 +1,1 @@
+Selawik 1.01 (Microsoft) is a Segoe UI metric-compatible font. Carlito (Google Fonts) is Calibri metric-compatible. Both are redistributed under the accompanying SIL Open Font Licenses. Original Windows fonts are not redistributed. Font software is unmodified.

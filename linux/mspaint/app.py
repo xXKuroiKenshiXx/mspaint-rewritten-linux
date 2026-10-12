@@ -10,7 +10,7 @@ from PySide6.QtGui import (QAction, QActionGroup, QColor, QFont, QImage,
                           QPen, QPolygon, QTransform, QKeySequence)
 from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QScrollArea,
     QToolBar, QComboBox, QSpinBox, QSlider, QColorDialog, QFileDialog,
-    QMessageBox, QInputDialog, QFontDialog, QLabel, QDockWidget)
+    QMessageBox, QInputDialog, QFontDialog, QLabel, QDockWidget, QVBoxLayout)
 from PySide6.QtPrintSupport import QPrinter, QPrintDialog, QPrintPreviewDialog, QPageSetupDialog
 from .document import Document, blank, valid_size
 
@@ -20,10 +20,14 @@ class Canvas(QWidget):
         super().__init__()
         self.window = window
         self.zoom = 1.0
-        self.tool = "Pencil"
-        self.pen_width = 3
+        self.tool = "Select"
+        self.pen_width = 1
+        self.tool_sizes = {"Pencil":1,"Eraser":5,"Brush":4,"Shape":4}
         self.foreground, self.background = QColor("black"), QColor("white")
-        self.font = QFont("Sans Serif", 20)
+        self.font = QFont("Calibri", 11)
+        self.text_opaque = False
+        self.text_editor = None
+        self.text_creating = False
         self.filled = False
         self.outlined = True
         self.transparent = False
@@ -35,6 +39,8 @@ class Canvas(QWidget):
         self.points = []
         self.polygon = []
         self.curve_pending = None
+        self.shape_pending = None
+        self.interaction = None
         self.setMouseTracking(True)
         self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
         self.sync()
@@ -47,24 +53,42 @@ class Canvas(QWidget):
         self.setFixedSize(max(1, round(self.doc.image.width() * self.zoom)),
                           max(1, round(self.doc.image.height() * self.zoom)))
         self.update()
+        if self.text_editor is not None:
+            self.text_editor.sync_geometry()
+        if hasattr(self.window, "workspace"):
+            self.window.workspace.sync()
         self.window.refresh()
 
     def point(self, event):
         return QPoint(int(event.position().x() / self.zoom), int(event.position().y() / self.zoom))
 
     def reset_transient(self):
+        self.cancel_text()
         self.preview = None
         self.drawing = False
         self.selection = QRect()
         self.selection_path = None
         self.polygon = []
         self.curve_pending = None
+        self.shape_pending = None
+        self.interaction = None
         self.update()
 
     def set_tool(self, tool):
+        self.finish_text()
+        self.finish_shape()
         self.finish_curve()
+        self.tool_sizes[self.size_kind(self.tool)] = self.pen_width
         self.reset_transient()
         self.tool = tool
+        self.pen_width = self.tool_sizes.get(self.size_kind(tool),1)
+        if hasattr(self.window,"ribbon"):
+            self.window.ribbon.sync_tool()
+
+    def size_kind(self,tool):
+        if tool in ("Pencil","Eraser"):return tool
+        if tool in ("Brush","Airbrush","Watercolor","Marker","Crayon","Calligraphy"):return "Brush"
+        return "Shape"
 
     def paintEvent(self, event):
         p = QPainter(self)
@@ -84,9 +108,20 @@ class Canvas(QWidget):
                 p.drawPath(self.selection_path)
             else:
                 p.drawRect(self.selection)
+            p.setPen(QPen(QColor("#444"),1/self.zoom))
+            p.setBrush(QColor("white"))
+            for point in self.selection_handles().values():
+                size = 6/self.zoom
+                from PySide6.QtCore import QRectF
+                p.drawRect(QRectF(point.x()-size/2,point.y()-size/2,size,size))
+            if self.shape_pending and "controls" in self.shape_pending:
+                for point in self.shape_pending["controls"]:
+                    p.drawRect(QRectF(point.x()-3/self.zoom,point.y()-3/self.zoom,6/self.zoom,6/self.zoom))
         if self.polygon:
             p.setPen(QPen(self.foreground, self.pen_width))
             p.drawPolyline(QPolygon(self.polygon))
+            p.setPen(QPen(QColor("#444"),1/self.zoom));p.setBrush(QColor("white"))
+            for point in self.polygon:p.drawRect(QRect(point-QPoint(3,3),point+QPoint(3,3)))
         if self.rulers:
             p.setPen(QPen(QColor("#777777"), 1 / self.zoom))
             for x in range(0, self.doc.image.width(), 50):
@@ -95,7 +130,71 @@ class Canvas(QWidget):
             for y in range(50, self.doc.image.height(), 50):
                 p.drawLine(0, y, 10, y)
                 p.drawText(12, y + 5, str(y))
+        if self.text_editor is not None and self.text_editor.isHidden():
+            editor=self.text_editor
+            if self.text_opaque:p.fillRect(editor.image_rect,self.background)
+            p.setPen(self.foreground);p.setFont(self.font)
+            p.drawText(editor.image_rect,Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop|Qt.TextFlag.TextWordWrap,editor.toPlainText())
         p.end()
+
+    @property
+    def pending_dirty(self):
+        return ((self.text_editor is not None and bool(self.text_editor.toPlainText())) or
+                self.shape_pending is not None or self.curve_pending is not None or len(self.polygon)>1)
+
+    def selection_handles(self):
+        r = self.selection
+        if r.isEmpty():return {}
+        return {"tl":r.topLeft(),"top":QPoint(r.center().x(),r.top()),"tr":r.topRight(),
+                "left":QPoint(r.left(),r.center().y()),"right":QPoint(r.right(),r.center().y()),
+                "bl":r.bottomLeft(),"bottom":QPoint(r.center().x(),r.bottom()),"br":r.bottomRight()}
+
+    def handle_at(self,point):
+        for name,center in self.selection_handles().items():
+            if abs(point.x()-center.x())<=5/self.zoom and abs(point.y()-center.y())<=5/self.zoom:return name
+        return None
+
+    def resized_rect(self,original,point,handle):
+        r = QRect(original)
+        if handle in ("tl","left","bl"):r.setLeft(min(point.x(),r.right()-1))
+        if handle in ("tr","right","br"):r.setRight(max(point.x(),r.left()+1))
+        if handle in ("tl","top","tr"):r.setTop(min(point.y(),r.bottom()-1))
+        if handle in ("bl","bottom","br"):r.setBottom(max(point.y(),r.top()+1))
+        return r
+
+    def render_shape(self):
+        shape = self.shape_pending
+        if shape is None:return
+        self.preview = shape["base"].copy()
+        self.color = self.foreground
+        self.draw_shape(self.preview,shape["start"],shape["end"])
+        points=[shape["start"],shape["end"]]+shape.get("controls",[])
+        self.selection = QPolygon(points).boundingRect()
+        self.update()
+
+    def snapshot(self):
+        image=(self.preview if self.preview is not None else self.doc.image).copy()
+        p=QPainter(image)
+        if self.polygon:
+            p.setPen(QPen(self.foreground,self.pen_width) if self.outlined else Qt.PenStyle.NoPen)
+            p.setBrush(self.background if self.filled else Qt.BrushStyle.NoBrush)
+            p.drawPolygon(QPolygon(self.polygon))
+        if self.text_editor is not None:
+            rect=self.text_editor.image_rect
+            if self.text_opaque:p.fillRect(rect,self.background)
+            p.setClipRect(rect);p.setPen(self.foreground);p.setFont(self.font)
+            p.drawText(rect,Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop|Qt.TextFlag.TextWordWrap,self.text_editor.toPlainText())
+        p.end()
+        return image
+
+    def finish_shape(self):
+        if self.shape_pending is not None:
+            if self.preview is not None:self.doc.commit(self.preview)
+            self.shape_pending = None
+            self.preview = None
+            self.selection = QRect()
+            self.selection_path = None
+            self.sync()
 
     def mousePressEvent(self, event):
         if event.button() not in (Qt.MouseButton.LeftButton, Qt.MouseButton.RightButton):
@@ -104,52 +203,79 @@ class Canvas(QWidget):
         if not self.doc.image.rect().contains(point):
             return
         self.setFocus()
+        if self.text_editor is not None:
+            editor=self.text_editor
+            if self.tool=="Text" and editor.image_rect.contains(point):
+                editor.setTextCursor(editor.cursorForPosition(event.position().toPoint()-editor.pos()))
+                self.setFocus() if editor.isHidden() else editor.setFocus()
+                return
+            self.finish_text()
         if self.tool == "Curve" and self.curve_pending is not None:
             self.curve_pending[2].append(point)
             self.preview = self.curve_pending[3].copy()
             self.draw_shape(self.preview, self.curve_pending[0], self.curve_pending[1])
             if len(self.curve_pending[2]) >= 2:
-                self.finish_curve()
+                start,end,controls,base=self.curve_pending
+                self.shape_pending={"tool":"Curve","start":start,"end":end,"controls":controls,"base":base}
+                self.curve_pending=None;self.render_shape()
             self.update()
             return
         self.start = self.last = point
         self.color = self.background if event.button() == Qt.MouseButton.RightButton else self.foreground
         self.points = [point]
+        if self.shape_pending is not None:
+            for index,node in enumerate(self.shape_pending.get("controls",[])):
+                if (node-point).manhattanLength()<=6/self.zoom:
+                    self.drawing=True;self.interaction="curve-node";self.node_index=index
+                    return
+            handle = self.handle_at(point)
+            if handle or self.selection.contains(point):
+                self.drawing = True
+                self.interaction = "shape"
+                self.resize_handle = handle
+                self.old_selection = QRect(self.selection)
+                self.original_shape_points=[QPoint(self.shape_pending["start"]),QPoint(self.shape_pending["end"])]+[QPoint(p) for p in self.shape_pending.get("controls",[])]
+                self.shape_left = self.shape_pending["start"].x()<=self.shape_pending["end"].x()
+                self.shape_top = self.shape_pending["start"].y()<=self.shape_pending["end"].y()
+                return
+            self.finish_shape()
         if self.tool == "Fill":
             self.window.safe(lambda: self.doc.fill(point, self.color))
             self.sync()
             return
         if self.tool == "Color picker":
-            self.foreground = self.doc.image.pixelColor(point)
+            if event.button()==Qt.MouseButton.RightButton:self.background = self.doc.image.pixelColor(point)
+            else:self.foreground = self.doc.image.pixelColor(point)
             self.window.update_colors()
             return
         if self.tool == "Zoom":
             self.window.set_zoom(self.zoom * (0.5 if event.button() == Qt.MouseButton.RightButton else 2))
             return
         if self.tool == "Text":
-            text, ok = QInputDialog.getMultiLineText(self, "Text", "Text to place:")
-            if ok and text:
-                image = self.doc.image.copy()
-                p = QPainter(image)
-                p.setPen(self.color)
-                p.setFont(self.font)
-                p.drawText(QRect(point, image.size()), Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignTop, text)
-                p.end()
-                self.doc.commit(image)
-                self.sync()
+            self.text_creating = True
+            self.selection = QRect(point,point)
+            self.selection_path = None
+            self.window.ribbon.tabs["Text"].show()
+            self.window.ribbon.select_tab("Text")
             return
         if self.tool == "Polygon":
             if event.button() == Qt.MouseButton.RightButton:
                 self.finish_polygon()
             else:
+                for index,node in enumerate(self.polygon):
+                    if (node-point).manhattanLength()<=6/self.zoom:
+                        self.drawing=True;self.interaction="polygon-node";self.node_index=index
+                        return
                 self.polygon.append(point)
                 self.update()
             return
         self.drawing = True
         self.original = self.doc.image.copy()
         self.preview = self.original.copy()
-        if self.tool in ("Select", "Free select") and self.selection.contains(point):
+        handle = self.handle_at(point)
+        if self.tool in ("Select", "Free select") and (handle or self.selection.contains(point)):
             self.moving = True
+            self.resize_handle = handle
             self.old_selection = QRect(self.selection)
             self.old_selection_path = QPainterPath(self.selection_path) if self.selection_path is not None else None
             self.fragment = self.selected_image()
@@ -160,6 +286,7 @@ class Canvas(QWidget):
             p.end()
         else:
             self.moving = False
+            self.resize_handle = None
             self.selection = QRect()
             self.selection_path = None
             if self.tool in ("Pencil", "Brush", "Eraser", "Airbrush", "Calligraphy", "Marker", "Watercolor", "Crayon"):
@@ -172,11 +299,11 @@ class Canvas(QWidget):
         color = QColor(self.background if self.tool == "Eraser" else self.color)
         width = self.pen_width
         if self.tool in ("Marker", "Watercolor"):
-            color.setAlpha(80)
+            color.setAlpha(200 if self.tool=="Marker" else 100)
         p.setPen(QPen(color, width, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin))
         if self.tool in ("Airbrush", "Crayon"):
             p.setPen(QPen(color, 1))
-            for _ in range(max(5, width * 2)):
+            for _ in range(width*10 if self.tool=="Crayon" else 20):
                 if self.tool == "Crayon":
                     textured = QColor(color)
                     h, s, v, a = textured.getHsv()
@@ -190,7 +317,7 @@ class Canvas(QWidget):
             p.setBrush(color)
             p.drawEllipse(b, width / 2, width / 2)
         elif self.tool == "Eraser":
-            p.setPen(QPen(color, width, Qt.PenStyle.SolidLine, Qt.PenCapStyle.SquareCap))
+            p.setPen(QPen(color, width*2, Qt.PenStyle.SolidLine, Qt.PenCapStyle.SquareCap))
             p.drawLine(a, b)
         elif self.tool == "Calligraphy":
             p.setPen(QPen(color, max(1, width / 3)))
@@ -205,19 +332,44 @@ class Canvas(QWidget):
     def mouseMoveEvent(self, event):
         point = self.point(event)
         self.window.statusBar().showMessage(f"{point.x()}, {point.y()} px")
+        if hasattr(self.window,"workspace"):
+            self.window.workspace.pointer(point)
+        if self.text_creating:
+            self.selection = QRect(self.start,point).normalized().intersected(self.doc.image.rect())
+            self.update()
+            return
         if not self.drawing:
+            return
+        if self.interaction == "polygon-node":
+            self.polygon[self.node_index]=point;self.update();return
+        if self.interaction == "curve-node":
+            self.shape_pending["controls"][self.node_index]=point;self.render_shape();return
+        if self.interaction == "shape":
+            r = self.resized_rect(self.old_selection,point,self.resize_handle) if self.resize_handle else self.old_selection.translated(point-self.start)
+            if "controls" in self.shape_pending:
+                old=self.old_selection
+                points=[QPoint(round(r.x()+(p.x()-old.x())*(r.width()-1)/max(1,old.width()-1)),round(r.y()+(p.y()-old.y())*(r.height()-1)/max(1,old.height()-1))) for p in self.original_shape_points]
+                self.shape_pending["start"],self.shape_pending["end"]=points[:2]
+                self.shape_pending["controls"]=points[2:]
+            else:
+                self.shape_pending["start"] = QPoint(r.left() if self.shape_left else r.right(),r.top() if self.shape_top else r.bottom())
+                self.shape_pending["end"] = QPoint(r.right() if self.shape_left else r.left(),r.bottom() if self.shape_top else r.top())
+            self.render_shape()
+            self.last = point
             return
         if self.tool in ("Pencil", "Brush", "Eraser", "Airbrush", "Calligraphy", "Marker", "Watercolor", "Crayon"):
             self.stroke(self.last, point)
         elif self.tool in ("Select", "Free select"):
             if self.moving:
                 delta = point - self.start
-                self.selection = self.old_selection.translated(delta)
+                self.selection = self.resized_rect(self.old_selection,point,self.resize_handle) if self.resize_handle else self.old_selection.translated(delta)
                 if self.old_selection_path is not None:
-                    self.selection_path = self.old_selection_path.translated(delta.x(), delta.y())
+                    sx=self.selection.width()/self.old_selection.width();sy=self.selection.height()/self.old_selection.height()
+                    transform=QTransform().translate(self.selection.x(),self.selection.y()).scale(sx,sy).translate(-self.old_selection.x(),-self.old_selection.y())
+                    self.selection_path = transform.map(self.old_selection_path)
                 self.preview = self.original.copy()
                 p = QPainter(self.preview)
-                p.drawImage(self.selection.topLeft(), self.fragment)
+                p.drawImage(self.selection,self.fragment)
                 p.end()
             elif self.tool == "Free select":
                 self.points.append(point)
@@ -279,7 +431,7 @@ class Canvas(QWidget):
             p.drawPolygon(QPolygon([QPoint(round(x+a*w), round(y+b*h)) for a, b in coords]))
         elif self.tool == "Curve":
             path = QPainterPath(start)
-            controls = self.curve_pending[2] if self.curve_pending else []
+            controls = self.curve_pending[2] if self.curve_pending else self.shape_pending.get("controls",[]) if self.shape_pending else []
             first = controls[0] if controls else start
             second = controls[1] if len(controls) > 1 else end
             path.cubicTo(first.x(), first.y(), second.x(), second.y(), end.x(), end.y())
@@ -289,13 +441,35 @@ class Canvas(QWidget):
         p.end()
 
     def mouseReleaseEvent(self, event):
+        if self.text_creating:
+            self.text_creating = False
+            rect = QRect(self.selection)
+            if rect.width()<20 or rect.height()<20:
+                rect = QRect(self.start.x(),self.start.y(),min(250,self.doc.image.width()-self.start.x()),min(90,self.doc.image.height()-self.start.y()))
+            from .textedit import PaintTextEdit
+            self.text_editor = PaintTextEdit(self,rect)
+            self.selection = QRect(self.text_editor.image_rect)
+            self.update()
+            return
         if not self.drawing:
             return
         self.mouseMoveEvent(event)
         self.drawing = False
+        if self.interaction in ("polygon-node","curve-node"):
+            self.interaction=None;self.sync();return
+        if self.interaction == "shape":
+            self.interaction = None
+            self.sync()
+            return
         if self.tool == "Curve":
             self.curve_pending = [self.start, self.last, [], self.original]
             self.window.statusBar().showMessage("Click two curve control points; Enter accepts; Escape cancels.")
+            return
+        shape_tools = {"Line","Rectangle","Rounded rectangle","Ellipse","Triangle","Right triangle","Diamond","Star","Four-point star","Six-point star","Pentagon","Hexagon","Arrow","Left arrow","Up arrow","Down arrow"}
+        if self.tool in shape_tools:
+            self.shape_pending = {"tool":self.tool,"start":QPoint(self.start),"end":QPoint(self.last),"base":self.original}
+            self.selection = QRect(self.start,self.last).normalized()
+            self.sync()
             return
         if self.tool not in ("Select", "Free select") or self.moving:
             self.doc.commit(self.preview)
@@ -310,7 +484,7 @@ class Canvas(QWidget):
         if len(self.polygon) >= 3:
             image = self.doc.image.copy()
             p = QPainter(image)
-            p.setPen(QPen(self.foreground, self.pen_width))
+            p.setPen(QPen(self.foreground, self.pen_width) if self.outlined else Qt.PenStyle.NoPen)
             p.setBrush(self.background if self.filled else Qt.BrushStyle.NoBrush)
             p.drawPolygon(QPolygon(self.polygon))
             p.end()
@@ -325,9 +499,40 @@ class Canvas(QWidget):
             self.preview = None
             self.sync()
 
+    def finish_text(self):
+        editor = self.text_editor
+        if editor is None:return
+        self.text_editor = None
+        text = editor.toPlainText()
+        if text:
+            image = self.doc.image.copy()
+            p = QPainter(image)
+            rect = editor.image_rect
+            if self.text_opaque:p.fillRect(rect,self.background)
+            p.setClipRect(rect)
+            p.setPen(self.foreground);p.setFont(self.font)
+            p.drawText(rect,Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop|Qt.TextFlag.TextWordWrap,text)
+            p.end();self.doc.commit(image)
+        editor.destroy_grips();editor.hide();editor.deleteLater()
+        self.selection = QRect()
+        self.sync()
+
+    def cancel_text(self):
+        editor = self.text_editor
+        self.text_editor = None
+        self.text_creating = False
+        if editor is not None:
+            editor.destroy_grips();editor.hide();editor.deleteLater()
+            self.selection=QRect();self.update()
+
+    def update_font(self,font=None):
+        if font is not None:self.font = font
+        if self.text_editor is not None:self.text_editor.update_style()
+
     def selected_image(self):
         rect = self.selection if not self.selection.isEmpty() else self.doc.image.rect()
-        image = self.doc.image.copy(rect)
+        source = self.preview if self.preview is not None else self.doc.image
+        image = source.copy(rect)
         if self.selection_path is not None:
             mask = QImage(image.size(), QImage.Format.Format_ARGB32)
             mask.fill(Qt.GlobalColor.transparent)
@@ -357,23 +562,35 @@ class Canvas(QWidget):
         self.sync()
 
     def keyPressEvent(self, event):
+        if self.text_editor is not None and self.text_editor.isHidden():
+            QApplication.sendEvent(self.text_editor,event);self.update();return
         if event.key() == Qt.Key.Key_Escape:
             self.reset_transient()
         elif event.key() == Qt.Key.Key_Delete:
             self.delete_selection()
         elif event.key() in (Qt.Key.Key_Enter, Qt.Key.Key_Return):
+            self.finish_shape()
             self.finish_curve()
             self.finish_polygon()
         else:
             super().keyPressEvent(event)
 
+    def wheelEvent(self,event):
+        if event.modifiers() & Qt.KeyboardModifier.ControlModifier:
+            self.window.set_zoom(self.zoom+(0.1 if event.angleDelta().y()>0 else -0.1));event.accept()
+        else:super().wheelEvent(event)
+
 
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
+        from .theme import install_fonts
+        install_fonts()
         self.doc = Document()
         self.settings = QSettings("mspaint-rewritten", "linux")
         self.thumbnail = None
+        self.thumbnail_preview = None
+        self.fullscreen_preview = None
         self.printer = QPrinter(QPrinter.PrinterMode.HighResolution)
         self.size_label = QLabel()
         self.statusBar().addPermanentWidget(self.size_label)
@@ -384,11 +601,23 @@ class Window(QMainWindow):
         self.setCentralWidget(self.scroll)
         self.setAcceptDrops(True)
         self.build_ui()
-        self.resize(1200, 820)
+        self.mount_paint_ui()
+        self.resize(1532, 848)
         geometry = self.settings.value("geometry")
         if geometry is not None:
             self.restoreGeometry(geometry)
         self.refresh()
+
+    def mousePressEvent(self,event):
+        if event.button()==Qt.MouseButton.LeftButton and not self.isMaximized():
+            point=self.mapFromGlobal(event.globalPosition().toPoint())
+            edges=Qt.Edge(0)
+            if 0<=point.x()<3:edges|=Qt.Edge.LeftEdge
+            elif self.width()-3<=point.x()<self.width():edges|=Qt.Edge.RightEdge
+            if 0<=point.y()<3:edges|=Qt.Edge.TopEdge
+            elif self.height()-3<=point.y()<self.height():edges|=Qt.Edge.BottomEdge
+            if edges and self.windowHandle() and self.windowHandle().startSystemResize(edges):event.accept();return
+        super().mousePressEvent(event)
 
     def action(self, menu, text, callback, shortcut=None, check=False):
         action = QAction(text, self)
@@ -397,6 +626,7 @@ class Window(QMainWindow):
         action.setCheckable(check)
         action.triggered.connect(lambda checked=False: callback(checked) if check else callback())
         menu.addAction(action)
+        self.addAction(action)
         return action
 
     def build_ui(self):
@@ -461,6 +691,7 @@ class Window(QMainWindow):
             "Rounded rectangle", "Ellipse", "Triangle", "Right triangle", "Diamond", "Star", "Four-point star", "Six-point star",
             "Pentagon", "Hexagon", "Arrow", "Left arrow", "Up arrow", "Down arrow", "Polygon"])
         self.tool_combo.currentTextChanged.connect(self.canvas.set_tool)
+        self.tool_combo.setCurrentText(self.canvas.tool)
         tools.addWidget(self.tool_combo)
         tools.addWidget(QLabel("  Size "))
         width = QSpinBox()
@@ -496,6 +727,32 @@ class Window(QMainWindow):
             action.setToolTip(color)
         self.update_colors()
 
+    def mount_paint_ui(self):
+        from .ribbon import PaintRibbon,TitleBar,ASSETS
+        from .workspace import PaintWorkspace,PaintStatusBar
+        from PySide6.QtGui import QIcon
+        self.setWindowFlags(Qt.WindowType.Window|Qt.WindowType.FramelessWindowHint)
+        self.setWindowIcon(QIcon(str(ASSETS/"paint.ico")))
+        self.setFont(QFont("Segoe UI",9))
+        self.menuBar().hide()
+        for toolbar in self.findChildren(QToolBar):toolbar.hide()
+        self.scroll.takeWidget()
+        old = self.takeCentralWidget()
+        root = QWidget(self)
+        layout = QVBoxLayout(root);layout.setContentsMargins(1,0,1,0);layout.setSpacing(0)
+        self.title_bar = TitleBar(self)
+        self.ribbon = PaintRibbon(self)
+        self.workspace = PaintWorkspace(self)
+        self.scroll = self.workspace.scroll
+        layout.addWidget(self.title_bar);layout.addWidget(self.ribbon);layout.addWidget(self.workspace,1)
+        self.setCentralWidget(root)
+        if old:old.deleteLater()
+        self.paint_status = PaintStatusBar(self)
+        self.setStatusBar(self.paint_status)
+        self.size_label = self.paint_status.dimensions
+        self.ribbon.sync_tool()
+        self.refresh()
+
     def safe(self, callback):
         try:
             callback()
@@ -506,19 +763,20 @@ class Window(QMainWindow):
 
     def refresh(self):
         name = self.doc.path.name if self.doc.path else "Untitled"
-        self.setWindowTitle(f"{'* ' if self.doc.dirty else ''}{name} — MSPaint Rewritten Linux")
-        self.size_label.setText(f"{self.doc.image.width()} × {self.doc.image.height()} px | {round(self.canvas.zoom * 100) if hasattr(self, 'canvas') else 100}%")
+        self.setWindowTitle(f"{name} - Paint")
+        if hasattr(self,"title_bar"):
+            self.title_bar.label.setText(self.windowTitle())
+        if hasattr(self,"paint_status"):
+            self.paint_status.refresh_document()
+        else:
+            self.size_label.setText(f"{self.doc.image.width()} × {self.doc.image.height()} px")
         if hasattr(self, "undo_action"):
             self.undo_action.setEnabled(self.doc.position > 0)
             self.redo_action.setEnabled(self.doc.position + 1 < len(self.doc.history))
-        if self.thumbnail is not None:
-            from PySide6.QtGui import QPixmap
-            self.thumbnail.setPixmap(QPixmap.fromImage(self.doc.image).scaled(240, 180, Qt.AspectRatioMode.KeepAspectRatio))
+        if self.thumbnail_preview is not None:self.thumbnail_preview.refresh()
 
     def may_discard(self):
-        self.canvas.finish_curve()
-        self.canvas.finish_polygon()
-        if not self.doc.dirty:
+        if not self.doc.dirty and not self.canvas.pending_dirty:
             return True
         result = QMessageBox.question(self, "Unsaved changes", "Save changes before continuing?",
             QMessageBox.StandardButton.Save | QMessageBox.StandardButton.Discard | QMessageBox.StandardButton.Cancel)
@@ -541,6 +799,8 @@ class Window(QMainWindow):
             self.remember(path)
 
     def save(self, save_as=False):
+        self.canvas.finish_text()
+        self.canvas.finish_shape()
         self.canvas.finish_curve()
         self.canvas.finish_polygon()
         path = self.doc.path
@@ -572,20 +832,31 @@ class Window(QMainWindow):
             self.action(self.recents, path, lambda p=path: self.open(p))
 
     def history(self, redo):
+        if self.canvas.text_editor is not None:
+            self.canvas.text_editor.redo() if redo else self.canvas.text_editor.undo()
+            return
+        if self.canvas.pending_dirty and not redo:
+            self.canvas.reset_transient();self.canvas.sync();return
         self.canvas.reset_transient()
         self.doc.redo() if redo else self.doc.undo()
         self.canvas.sync()
 
     def copy(self):
+        if self.canvas.text_editor is not None:
+            self.canvas.text_editor.copy();return
         QApplication.clipboard().setImage(self.canvas.selected_image())
 
     def cut(self):
+        if self.canvas.text_editor is not None:
+            self.canvas.text_editor.cut();return
         if self.canvas.selection.isEmpty():
             self.select_all()
         self.copy()
         self.canvas.delete_selection()
 
     def paste(self):
+        if self.canvas.text_editor is not None:
+            self.canvas.text_editor.paste();return
         image = QApplication.clipboard().image()
         point = self.canvas.selection.topLeft() if not self.canvas.selection.isEmpty() else QPoint()
         if self.safe(lambda: self.doc.paste(image, point)):
@@ -603,6 +874,8 @@ class Window(QMainWindow):
                 self.canvas.sync()
 
     def select_all(self):
+        if self.canvas.text_editor is not None:
+            self.canvas.text_editor.selectAll();return
         self.tool_combo.setCurrentText("Select")
         self.canvas.selection = self.doc.image.rect()
         self.canvas.update()
@@ -687,10 +960,9 @@ class Window(QMainWindow):
         self.canvas.sync()
 
     def properties(self):
-        QMessageBox.information(self, "Image properties", f"Size: {self.doc.image.width()} × {self.doc.image.height()} px\n"
-            f"Memory: {self.doc.image.sizeInBytes() / 1048576:.1f} MiB\nFile: {self.doc.path or 'Untitled'}\n"
-            f"Read formats: {', '.join(bytes(f).decode() for f in QImageReader.supportedImageFormats())}\n"
-            f"Write formats: {', '.join(bytes(f).decode() for f in QImageWriter.supportedImageFormats())}")
+        self.canvas.finish_text();self.canvas.finish_shape();self.canvas.finish_curve();self.canvas.finish_polygon()
+        from .dialogs import PropertiesDialog
+        PropertiesDialog(self).exec()
 
     def set_zoom(self, zoom):
         self.canvas.zoom = max(0.1, min(10, zoom))
@@ -704,20 +976,27 @@ class Window(QMainWindow):
                           self.scroll.viewport().height() / self.doc.image.height()))
 
     def toggle_canvas(self, key, value):
+        if key=="rulers" and hasattr(self,"workspace"):
+            self.workspace.set_rulers(value);return
         setattr(self.canvas, key, value)
         self.canvas.update()
 
     def fullscreen(self):
-        self.showNormal() if self.isFullScreen() else self.showFullScreen()
+        if self.fullscreen_preview is not None:
+            self.fullscreen_preview.close();return
+        from .previews import FullscreenPreview
+        self.fullscreen_preview=FullscreenPreview(self)
+        self.fullscreen_preview.showFullScreen()
 
     def show_thumbnail(self, visible):
-        if not hasattr(self, "thumbnail_dock"):
-            self.thumbnail_dock = QDockWidget("Thumbnail", self)
-            self.thumbnail = QLabel()
-            self.thumbnail.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            self.thumbnail_dock.setWidget(self.thumbnail)
-            self.addDockWidget(Qt.DockWidgetArea.RightDockWidgetArea, self.thumbnail_dock)
-        self.thumbnail_dock.setVisible(visible)
+        if not visible:
+            if self.thumbnail_preview is not None:self.thumbnail_preview.close()
+            return
+        if self.thumbnail_preview is None:
+            from .previews import ThumbnailPreview
+            self.thumbnail_preview=ThumbnailPreview(self)
+            self.thumbnail=self.thumbnail_preview.label
+        self.thumbnail_preview.show()
         self.refresh()
 
     def choose_color(self, secondary):
@@ -740,6 +1019,32 @@ class Window(QMainWindow):
     def update_colors(self):
         self.primary.setText("Color 1: " + self.canvas.foreground.name())
         self.secondary.setText("Color 2: " + self.canvas.background.name())
+        if hasattr(self,"ribbon"):
+            self.ribbon.colors.update_colors()
+        if self.canvas.text_editor is not None:self.canvas.text_editor.update_style()
+        self.canvas.render_shape()
+
+    def about(self):
+        QMessageBox.about(self,"About Paint","Paint\nLinux edition of mspaint-rewritten\n"
+            "Copyright © Codrut. MIT license.\nQt/PySide6 libraries: LGPL-3.0.\n"
+            "License notices and corresponding library sources accompany the distribution.")
+
+    def email_image(self):
+        if self.doc.dirty or self.doc.path is None:
+            if not self.save():return
+        from PySide6.QtCore import QProcess
+        import shutil
+        executable = shutil.which("xdg-email")
+        if executable is None:
+            QMessageBox.information(self,"Send in email","No desktop email helper is available. Open your email application and attach the saved picture.")
+            return
+        started,_ = QProcess.startDetached(executable,["--attach",str(self.doc.path)])
+        if not started:QMessageBox.warning(self,"Send in email","The email application could not be opened.")
+
+    def resize_skew(self):
+        from .dialogs import ResizeDialog
+        dialog = ResizeDialog(self)
+        dialog.exec()
 
     def choose_font(self):
         ok, font = QFontDialog.getFont(self.canvas.font, self)
@@ -751,7 +1056,7 @@ class Window(QMainWindow):
         if not p.isActive():
             raise OSError("Cannot initialize printer")
         rect = printer.pageLayout().paintRectPixels(printer.resolution())
-        image = self.doc.image.scaled(rect.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+        image = self.canvas.snapshot().scaled(rect.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         p.drawImage(rect.x() + (rect.width() - image.width()) // 2,
                     rect.y() + (rect.height() - image.height()) // 2, image)
         p.end()
@@ -804,6 +1109,8 @@ class Window(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
+    app.setStyle("Fusion")
+    app.setFont(QFont("Segoe UI",9))
     app.setApplicationName("MSPaint Rewritten Linux")
     if "--self-test" in sys.argv:
         from .selftest import run

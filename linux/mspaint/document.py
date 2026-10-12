@@ -103,7 +103,8 @@ class Document:
                 raise
         else:
             writer = QImageWriter(target, fmt.encode())
-            writer.setQuality(95)
+            if fmt in ("jpeg", "webp"):
+                writer.setQuality(95)
             if not writer.write(image):
                 target.cancelWriting()
                 raise OSError(writer.errorString())

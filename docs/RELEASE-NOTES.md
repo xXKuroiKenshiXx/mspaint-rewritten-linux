@@ -1,12 +1,12 @@
 # Linux preview 0.1.0
 
-Native Qt Widgets edition, preserving the Windows Delphi source and ripDZL stability history through `93d0fb4`. This is a preview, with documented differences from the original Windows interaction model.
+Native Qt Widgets edition, preserving the Windows Delphi source and ripDZL stability history through `93d0fb4`. Recreates the original Paint ribbon using DFM control geometry and 125 extracted graphical resources, with exterior rulers, segmented status bar, inline text editing, selection/shape/canvas resize handles, editable curve controls, image properties and independent thumbnail/fullscreen windows. Bundled OFL Selawik/Carlito fonts provide redistributable metric-compatible fallbacks. This remains a preview with documented rendering and desktop integration limits.
 
 Downloads: x86_64 AppImage, Ubuntu 24.04/Debian 13 compatible `.deb`, Freedesktop 25.08 Flatpak, and portable tarball. AppImage/portable require glibc 2.39 or later and OpenGL/EGL. Void musl users should use Flatpak; musl was not tested. The project is not published on Flathub.
 
-Validation: 49 pytest tests; packaged format/editing checks and startup on Ubuntu 24.04, Debian 13, Fedora 44, Arch and Void glibc containers; actual .deb installation in Ubuntu; AppImage extraction/startup; Flatpak installation and runtime checks. No full desktop validation on all distributions, physical printer test, real Wayland test or wallpaper portal test. Windows 11 remains unverified.
+Validation: 68 pytest tests; packaged format/editing checks and startup on Ubuntu 24.04, Debian 13, Fedora 44, Arch and Void glibc containers; actual .deb installation in Ubuntu; AppImage extraction/startup; Flatpak installation and runtime checks. No full desktop validation on all distributions, physical printer test, real Wayland test or wallpaper portal test. Windows 11 remains unverified.
 
-ClamAV final scan: 647 files, zero detections. Python dependency audit: no known vulnerabilities. These checks are not a malware-free or bug-free guarantee.
+ClamAV final scan: 780 files, zero detections. Python dependency audit: no known vulnerabilities. These checks are not a malware-free or bug-free guarantee.
 
 `SHA256SUMS` covers the release assets. `validation-logs.tar.gz` contains test logs and OCI image digests. `dependencies.cdx.json` contains the Python dependency inventory. `third-party-sources-0.1.0-x86_64.tar.gz` mirrors third-party sources; bundled notices describe dynamic-library replacement and licensing. One unavailable source mirror for permissively licensed Kerberos is documented in the source inventory; its complete notices are included.
 

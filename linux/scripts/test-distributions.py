@@ -38,4 +38,4 @@ for name, (image, setup) in cases.items():
     results.append({"distribution": name, "image": image, "digest": inspect.stdout.strip(), "runtime_and_startup": status})
     (output / "results.json").write_text(json.dumps(results, indent=2) + "\n")
     print(name, status, flush=True)
-raise SystemExit(0 if all(r["startup"] == "passed" for r in results) else 1)
+raise SystemExit(0 if all(r["runtime_and_startup"] == "passed" for r in results) else 1)
