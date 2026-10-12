@@ -4,7 +4,7 @@
 
 ## Resultados
 
-- **48 pruebas pytest aprobadas**: herramientas de ratón y formas, controles de curva, texto, cancelación de descarte, copia/pegado/recorte, máscara transparente, movimiento de selección con deshacer, giro, zoom, miniatura y exportación PDF. El núcleo verifica archivos corruptos, PNG/BMP/JPEG/GIF/WebP, guardado fallido, historial tras guardar y bifurcar, relleno, límites, nuevo documento y ampliación al pegar.
+- **49 pruebas pytest aprobadas**: herramientas de ratón y formas, controles de curva, texto, cancelación de descarte, copia/pegado/recorte, máscara transparente, movimiento de selección con deshacer, giro, zoom, miniatura y exportación PDF. El núcleo verifica archivos corruptos, PNG/BMP/JPEG/GIF/WebP, guardado fallido, historial tras guardar y bifurcar, relleno, límites, nuevo documento y ampliación al pegar.
 - **Ejecutable empaquetado**: sus comprobaciones internas de formatos, deshacer/rehacer, relleno, cambiar tamaño, pegar y preservar el documento ante entrada corrupta pasan sin pytest ni Python instalado en el host.
 - **X11/Xvfb**: arranque del ejecutable y captura de la interfaz aprobados.
 - **AppImage**: extracción/ejecución sin FUSE y arranque aprobados. No se probó el montaje FUSE en WSL.

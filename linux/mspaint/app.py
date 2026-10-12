@@ -148,9 +148,10 @@ class Canvas(QWidget):
         self.drawing = True
         self.original = self.doc.image.copy()
         self.preview = self.original.copy()
-        if self.tool == "Select" and self.selection.contains(point):
+        if self.tool in ("Select", "Free select") and self.selection.contains(point):
             self.moving = True
             self.old_selection = QRect(self.selection)
+            self.old_selection_path = QPainterPath(self.selection_path) if self.selection_path is not None else None
             self.fragment = self.selected_image()
             p = QPainter(self.original)
             if self.selection_path is not None:
@@ -212,6 +213,8 @@ class Canvas(QWidget):
             if self.moving:
                 delta = point - self.start
                 self.selection = self.old_selection.translated(delta)
+                if self.old_selection_path is not None:
+                    self.selection_path = self.old_selection_path.translated(delta.x(), delta.y())
                 self.preview = self.original.copy()
                 p = QPainter(self.preview)
                 p.drawImage(self.selection.topLeft(), self.fragment)
@@ -296,8 +299,6 @@ class Canvas(QWidget):
             return
         if self.tool not in ("Select", "Free select") or self.moving:
             self.doc.commit(self.preview)
-            if self.moving:
-                self.selection_path = None
         self.preview = None
         self.sync()
 

@@ -134,3 +134,28 @@ def test_transparent_selection(window):
     image = window.canvas.selected_image()
     assert image.pixelColor(0, 0).alpha() == 0
     assert image.pixelColor(15, 15).alpha() == 255
+
+
+def test_free_selection_move_preserves_mask(window):
+    from mspaint.document import blank
+    from PySide6.QtGui import QPainterPath, QPolygon
+    window.doc.commit(blank(100, 100, "red"))
+    window.tool_combo.setCurrentText("Free select")
+    path = QPainterPath()
+    path.addPolygon(QPolygon([QPoint(10, 10), QPoint(30, 10), QPoint(10, 30)]))
+    path.closeSubpath()
+    window.canvas.selection_path = path
+    window.canvas.selection = QRect(10, 10, 20, 20)
+    before = window.doc.image.copy()
+    QTest.mousePress(window.canvas, Qt.MouseButton.LeftButton, pos=QPoint(15, 15))
+    QTest.mouseMove(window.canvas, QPoint(55, 55))
+    QTest.mouseRelease(window.canvas, Qt.MouseButton.LeftButton, pos=QPoint(55, 55))
+    assert window.canvas.selection_path is not None
+    assert window.canvas.selection.topLeft() == QPoint(50, 50)
+    image = window.canvas.selected_image()
+    assert image.pixelColor(18, 18).alpha() == 0
+    assert image.pixelColor(2, 2).alpha() == 255
+    window.canvas.transparent = True
+    assert window.canvas.selected_image().pixelColor(18, 18).alpha() == 0
+    window.doc.undo()
+    assert window.doc.image == before

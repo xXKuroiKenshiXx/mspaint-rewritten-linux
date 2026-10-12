@@ -4,7 +4,7 @@ Native Qt Widgets edition, preserving the Windows Delphi source and ripDZL stabi
 
 Downloads: x86_64 AppImage, Ubuntu 24.04/Debian 13 compatible `.deb`, Freedesktop 25.08 Flatpak, and portable tarball. AppImage/portable require glibc 2.39 or later and OpenGL/EGL. Void musl users should use Flatpak; musl was not tested. The project is not published on Flathub.
 
-Validation: 48 pytest tests; packaged format/editing checks and startup on Ubuntu 24.04, Debian 13, Fedora 44, Arch and Void glibc containers; actual .deb installation in Ubuntu; AppImage extraction/startup; Flatpak installation and runtime checks. No full desktop validation on all distributions, physical printer test, real Wayland test or wallpaper portal test. Windows 11 remains unverified.
+Validation: 49 pytest tests; packaged format/editing checks and startup on Ubuntu 24.04, Debian 13, Fedora 44, Arch and Void glibc containers; actual .deb installation in Ubuntu; AppImage extraction/startup; Flatpak installation and runtime checks. No full desktop validation on all distributions, physical printer test, real Wayland test or wallpaper portal test. Windows 11 remains unverified.
 
 ClamAV final scan: 647 files, zero detections. Python dependency audit: no known vulnerabilities. These checks are not a malware-free or bug-free guarantee.
 
